@@ -50,3 +50,6 @@ document.querySelectorAll('.speaker-card').forEach(card=>{const name=card.queryS
 document.addEventListener('keydown',e=>{const tag=document.activeElement?.tagName;if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(tag)&&!document.getElementById('archiveSearch')){e.preventDefault();window.location.href=`${rootPrefix}search.html`}});
 
 document.querySelectorAll('.main-nav .nav-item').forEach(link=>{if(link.textContent.includes('My Library')&&link.getAttribute('href')==='#'){link.addEventListener('click',e=>{e.preventDefault();link.title='Library will be added after the core public archive is indexed'})}});
+
+// Every sitting receives continuity navigation from chronology.json without editing individual HTML pages.
+if(pathParts.includes('sessions')&&!document.querySelector('script[data-session-nav]')){const sessionNav=document.createElement('script');sessionNav.src=`${rootPrefix}session-nav.js`;sessionNav.defer=true;sessionNav.dataset.sessionNav='true';document.body.appendChild(sessionNav)}
