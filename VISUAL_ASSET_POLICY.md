@@ -44,16 +44,24 @@ If a strong image is not ready, leave the slot text-led.
 
 Concept art may be more symbolic than scene art, but it must still be generated artwork rather than a code-drawn infographic masquerading as illustration. Exact constitutional text must remain separate and source-attributed.
 
-## Current approved generated portrait assets
+## Current approved generated assets
 
+### Historical scene
+- `assets/constitution-hall-generated.png` — generated editorial reconstruction used as a place/atmosphere anchor; never described as an archival photograph.
+
+### Personality portraits
 - `assets/sachchidananda-sinha-illustrated.webp`
 - `assets/jb-kripalani-illustrated.webp`
 - `assets/nehru-illustrated.webp`
 
 Other personality and scene assets remain pending review unless explicitly promoted into this list.
 
+## Resolution discipline
+
+Generated artwork must not be enlarged far beyond its native dimensions merely to fill a layout. If the available generated asset is modest in resolution, the interface should use a contained editorial card rather than a soft full-width banner.
+
 ## Retired approach
 
-The earlier code-drawn SVG Constitution Hall, Objectives Resolution and personality illustrations are retired from the public visual system. They should not be referenced by public HTML and may be removed from the repository once migration is complete.
+The earlier code-drawn SVG Constitution Hall, Objectives Resolution and personality illustrations are permanently retired from the public visual system and must not be reintroduced.
 
 **Website and editorial direction: Radhakishan Jat.**
