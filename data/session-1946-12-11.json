@@ -1,0 +1,25 @@
+{
+  "session": {
+    "date": "1946-12-11",
+    "title": "Election of the Permanent Chairman",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "11:00",
+    "volume": "Vol. I",
+    "openingChair": "Dr. Sachchidananda Sinha",
+    "electedChair": "Dr. Rajendra Prasad",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762975?view_type=browse",
+      "fileName": "cad_11-12-1946.pdf"
+    }
+  },
+  "sections": [
+    {"order":1,"title":"Reply to Messages of Greetings"},
+    {"order":2,"title":"Election of the Permanent Chairman","keySpeakers":["Dr. Sachchidananda Sinha","J. B. Kripalani","Vallabhbhai Patel","Rajendra Prasad"]},
+    {"order":3,"title":"Congratulations to the Permanent Chairman"},
+    {"order":4,"title":"Rajendra Prasad assumes the Chair"}
+  ],
+  "themes": ["Election of President","Assembly procedure","Institution-building","Presiding authority"],
+  "editorialStatus": "source-indexed-awaiting-custom-portrait",
+  "credits": {"website":"Radhakishan Jat"}
+}
