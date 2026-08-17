@@ -1,0 +1,24 @@
+{
+  "session": {
+    "date": "1946-12-12",
+    "title": "Objectives Resolution Discussion Postponed",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "11:00",
+    "volume": "Vol. I",
+    "chair": "Dr. Rajendra Prasad",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762974?view_type=browse",
+      "fileName": "cad_12-12-1946.pdf"
+    }
+  },
+  "sections": [
+    {"order":1,"title":"Register check"},
+    {"order":2,"title":"Objectives Resolution discussion postponed","keySpeakers":["Rajendra Prasad"]},
+    {"order":3,"title":"Procedural advice on moving the Resolution","keySpeakers":["Hari Singh Gour","Satyanarayan Sinha","Rajendra Prasad"]},
+    {"order":4,"title":"Adjournment until 13 December"}
+  ],
+  "themes": ["Deliberation","Notice and preparation","Objectives Resolution","Assembly procedure"],
+  "editorialStatus": "source-indexed",
+  "credits": {"website":"Radhakishan Jat"}
+}
