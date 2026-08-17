@@ -1,9 +1,15 @@
 const granularRoot=document.querySelector('[data-granular-session]');
 
-function esc(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+function esc(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[ch]))}
 function initials(name){return String(name||'').replace(/Dr\.|Mr\.|Mrs\.|Sardar|Pandit|The Hon.?ble/gi,'').trim().split(/\s+/).slice(0,2).map(p=>p[0]||'').join('').toUpperCase()||'•'}
 function approvedPortrait(path){return typeof path==='string'&&/\.(?:webp|png|jpe?g)$/i.test(path)}
-function media(person,prefix){if(approvedPortrait(person?.portrait))return `<img src="${prefix}${esc(person.portrait)}" alt="Generated archival portrait of ${esc(person.name)}">`;return `<span class="speaker-initial" aria-hidden="true">${esc(initials(person?.name))}</span>`}
+const portraitByName={
+  'Dr. Rajendra Prasad':'assets/rajendra-prasad-archival.jpg',
+  'Rajendra Prasad':'assets/rajendra-prasad-archival.jpg',
+  'Dr. B. R. Ambedkar':'assets/br-ambedkar-archival-1946.jpg',
+  'B. R. Ambedkar':'assets/br-ambedkar-archival-1946.jpg'
+};
+function media(person,prefix){const portrait=person?.portrait||portraitByName[person?.name];if(approvedPortrait(portrait))return `<img src="${prefix}${esc(portrait)}" alt="Portrait of ${esc(person.name)}" loading="lazy" decoding="async">`;return `<span class="speaker-initial" aria-hidden="true">${esc(initials(person?.name))}</span>`}
 
 async function bootGranular(){
   if(!granularRoot)return;
@@ -27,6 +33,8 @@ async function bootGranular(){
         filters.querySelectorAll('.speaker-filter').forEach(b=>b.classList.toggle('active',b===btn));
         const target=btn.dataset.speaker;
         stream?.querySelectorAll('.intervention').forEach(row=>row.classList.toggle('hidden',target!=='all'&&row.dataset.speaker!==target));
+        const visible=target==='all'?interventions.length:interventions.filter(item=>item.speakerId===target).length;
+        btn.setAttribute('aria-label',`${btn.textContent.trim()} · ${visible} intervention${visible===1?'':'s'}`);
       }));
     }
     if(stream){
