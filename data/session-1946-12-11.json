@@ -1,7 +1,7 @@
 {
   "session": {
     "date": "1946-12-11",
-    "title": "Election of the Permanent Chairman",
+    "title": "A Permanent President Is Elected",
     "venue": "Constitution Hall, New Delhi",
     "startTime": "11:00",
     "volume": "Vol. I",
@@ -20,6 +20,7 @@
     {"order":4,"title":"Rajendra Prasad assumes the Chair"}
   ],
   "themes": ["Election of President","Assembly procedure","Institution-building","Presiding authority"],
-  "editorialStatus": "source-indexed-awaiting-custom-portrait",
+  "editorialStatus": "visual-reading-live-rajendra-profile-awaiting-custom-portrait",
+  "visualStrategy": "The sitting-level page centres Dr. Sachchidananda Sinha, the speaker who declares the election and presides over the transition. No generic Rajendra Prasad portrait is used.",
   "credits": {"website":"Radhakishan Jat"}
 }
