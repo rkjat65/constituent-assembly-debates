@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Validate site integrity
+        run: node scripts/check-site.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
