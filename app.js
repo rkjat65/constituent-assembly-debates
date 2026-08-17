@@ -4,15 +4,6 @@ const pathParts=window.location.pathname.split('/').filter(Boolean);
 const nested=pathParts.some(p=>p==='sessions'||p==='speakers'||p==='topics');
 const rootPrefix=nested?'../':'';
 
-const legacyPortraitMap={
-  'assets/sachchidananda-sinha-illustrated.webp':'assets/portraits/sachchidananda-sinha.webp',
-  'assets/jb-kripalani-illustrated.webp':'assets/portraits/jb-kripalani.webp',
-  'assets/nehru-illustrated.webp':'assets/portraits/jawaharlal-nehru.webp',
-  'assets/rajendra-prasad-archival.jpg':'assets/portraits/rajendra-prasad.webp',
-  'assets/br-ambedkar-archival-1946.jpg':'assets/portraits/br-ambedkar.webp'
-};
-document.querySelectorAll('img[src]').forEach(img=>{const raw=img.getAttribute('src')||'';const match=Object.entries(legacyPortraitMap).find(([oldPath])=>raw.endsWith(oldPath));if(match){img.src=`${rootPrefix}${match[1]}`;img.alt=(img.alt||'Portrait').replace(/Archival photograph|Archival portrait|Generated archival caricature/gi,'Generated editorial portrait')}});
-
 if(!document.querySelector('link[data-archive-ux]')){const ux=document.createElement('link');ux.rel='stylesheet';ux.href=`${rootPrefix}ux.css`;ux.dataset.archiveUx='true';document.head.appendChild(ux)}
 
 const themeToggle=document.getElementById('themeToggle');
