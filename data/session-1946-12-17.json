@@ -1,0 +1,24 @@
+{
+  "session": {
+    "date": "1946-12-17",
+    "title": "Ambedkar on Unity and the Beginning",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "11:00",
+    "volume": "Vol. I",
+    "chair": "Dr. Rajendra Prasad",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762964?view_type=browse",
+      "fileName": "cad_17-12-1946.pdf"
+    }
+  },
+  "featuredIntervention": {
+    "speaker": "Dr. B. R. Ambedkar",
+    "theme": "Objectives Resolution",
+    "shortExcerpt": "Our difficulty is not with regard to the ultimate, our difficulty is with regard to the beginning."
+  },
+  "themes": ["Objectives Resolution","Unity","Political accommodation","Constitutional method","Assembly procedure"],
+  "visualAssets": ["assets/ambedkar-engraved.svg","assets/objectives-resolution-visual.svg"],
+  "editorialStatus": "visual-reading-live",
+  "credits": {"website":"Radhakishan Jat"}
+}
