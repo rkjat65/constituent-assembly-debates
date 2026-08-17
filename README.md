@@ -4,12 +4,31 @@ A visual-first platform for exploring the Constituent Assembly Debates of India 
 
 **Website concept, information design and presentation by Radhakishan Jat.**
 
+## Live preview
+
+GitHub Pages deploys automatically from `main`:
+
+`https://rkjat65.github.io/constituent-assembly-debates/`
+
 ## Current routes
 
-- `/` — **9 December 1946: The First Sitting**
+- `/` — **Archive Home**
+- `/chronology.html` — chronological explorer
+- `/speakers.html` — personality explorer
+- `/themes.html` — thematic explorer
+- `/sessions/1946-12-09.html` — **9 December 1946: The First Sitting**
 - `/sessions/1946-12-10.html` — **10 December 1946: The Assembly Makes Its Rules**
 - `/sessions/1946-12-13.html` — **13 December 1946: The Objectives Resolution**
-- `/chronology.html` — official-date chronological explorer
+
+## Portrait assets currently committed
+
+The site uses repository-hosted WebP illustrations, not runtime or external image URLs:
+
+- `assets/sachchidananda-sinha-illustrated.webp`
+- `assets/jb-kripalani-illustrated.webp`
+- `assets/nehru-illustrated.webp`
+
+This keeps the visual readings portable on GitHub Pages and prevents broken external-image dependencies.
 
 ## Locked visual direction
 
@@ -50,11 +69,12 @@ Current seeds:
 
 ## Product architecture
 
-Planned top-level modes:
+Top-level modes:
 
+- **Home** — entry point and available visual readings.
 - **Chronology** — every sitting from the beginning to the end in official date order.
 - **Sessions** — visual reading of an individual sitting.
-- **Themes** — e.g. Fundamental Rights, federalism, citizenship, minority rights, language, judiciary.
+- **Themes** — ideas connected across dates and speakers.
 - **Speakers** — interventions and themes grouped by personality.
 - **Constitutional provisions** — debates connected to the eventual constitutional text.
 - **Documents / Sources** — primary records, provenance and editorial notes.
