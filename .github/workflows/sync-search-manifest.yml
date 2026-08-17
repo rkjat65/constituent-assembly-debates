@@ -9,6 +9,7 @@ on:
       - 'data/search-committees.json'
       - 'data/search-session-*.json'
       - 'data/search-speakers-*.json'
+      - 'data/search-theme-*.json'
       - 'scripts/sync-search-manifest.mjs'
 
 permissions:
