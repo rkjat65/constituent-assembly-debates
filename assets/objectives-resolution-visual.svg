@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">Objectives Resolution editorial visual</title><desc id="desc">A parchment manuscript composition representing the Objectives Resolution with a sovereign people motif, Assembly benches, an Ashoka wheel, and restrained tricolour accents.</desc>
+<defs>
+<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#ead7b7"/></linearGradient>
+<linearGradient id="scroll" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff8e8"/><stop offset="1" stop-color="#e6cda2"/></linearGradient>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#4d3420" flood-opacity=".18"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" seed="8"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .09 0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+</defs>
+<rect width="1400" height="900" fill="url(#paper)"/>
+<circle cx="1145" cy="145" r="210" fill="none" stroke="#1f4d8f" stroke-width="10" opacity=".08"/>
+<g transform="translate(1145 145)" stroke="#1f4d8f" opacity=".08" fill="none"><circle r="160" stroke-width="5"/><circle r="22" stroke-width="4"/><path d="M0-160V-22M0 160V22M-160 0H-22M160 0H22M-113-113L-16-16M113 113L16 16M113-113L16-16M-113 113L-16 16M-61-148L-8-20M61 148L8 20M61-148L8-20M-61 148L-8 20M-148-61L-20-8M148 61L20 8M148-61L20-8M-148 61L-20 8" stroke-width="3"/></g>
+
+<!-- semi-circular chamber ghost -->
+<g opacity=".14" stroke="#6e5134" fill="none"><path d="M125 760C280 480 520 380 700 380C880 380 1120 480 1275 760" stroke-width="28"/><path d="M200 785C350 550 540 465 700 465C860 465 1050 550 1200 785" stroke-width="22"/><path d="M275 815C420 620 560 550 700 550C840 550 980 620 1125 815" stroke-width="18"/></g>
+
+<!-- manuscript -->
+<g filter="url(#shadow)"><path d="M335 95Q700 45 1065 95L1012 742Q700 790 388 742Z" fill="url(#scroll)" stroke="#a78758" stroke-width="6"/><path d="M335 95Q700 140 1065 95" fill="none" stroke="#c2a474" stroke-width="6" opacity=".7"/><path d="M388 742Q700 690 1012 742" fill="none" stroke="#c2a474" stroke-width="6" opacity=".7"/></g>
+<text x="700" y="185" text-anchor="middle" font-family="Georgia,serif" font-size="25" letter-spacing="7" fill="#a55100">13 DECEMBER 1946</text>
+<text x="700" y="250" text-anchor="middle" font-family="Georgia,serif" font-size="51" font-weight="700" fill="#2f241a">OBJECTIVES RESOLUTION</text>
+<path d="M485 285H915" stroke="#b98a2f" stroke-width="3"/>
+
+<text x="700" y="350" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#4a3725">“This Constituent Assembly declares its firm</text>
+<text x="700" y="392" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#4a3725">and solemn resolve to proclaim India as an</text>
+<text x="700" y="446" text-anchor="middle" font-family="Georgia,serif" font-size="44" font-weight="700" fill="#164d30">Independent Sovereign Republic.”</text>
+<text x="700" y="502" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#6e5840">Short excerpt · Jawaharlal Nehru · Constituent Assembly</text>
+
+<!-- conceptual chips -->
+<g font-family="Georgia,serif" font-size="19" font-weight="700">
+<rect x="430" y="555" width="180" height="56" rx="28" fill="#f3e2c5" stroke="#c49b5c" stroke-width="2"/><text x="520" y="590" text-anchor="middle" fill="#a64e00">SOVEREIGNTY</text>
+<rect x="620" y="555" width="160" height="56" rx="28" fill="#edf3eb" stroke="#86a58c" stroke-width="2"/><text x="700" y="590" text-anchor="middle" fill="#164d30">JUSTICE</text>
+<rect x="790" y="555" width="180" height="56" rx="28" fill="#edf2f8" stroke="#8ca4c7" stroke-width="2"/><text x="880" y="590" text-anchor="middle" fill="#1f4d8f">EQUALITY</text>
+</g>
+<path d="M470 655C560 630 610 635 700 662C790 635 845 630 930 655" fill="none" stroke="#e87500" stroke-width="18" stroke-linecap="round" opacity=".6"/>
+<path d="M470 688C560 666 610 670 700 696C790 670 845 666 930 688" fill="none" stroke="#164d30" stroke-width="18" stroke-linecap="round" opacity=".6"/>
+<circle cx="700" cy="675" r="28" fill="#fff9ed" stroke="#1f4d8f" stroke-width="5"/><path d="M700 651V699M676 675H724M683 658L717 692M717 658L683 692" stroke="#1f4d8f" stroke-width="3"/>
+
+<!-- speaker silhouette -->
+<g transform="translate(185 480)" fill="#5b4128" stroke="#3f2d1d" stroke-width="5" opacity=".86"><ellipse cx="0" cy="-94" rx="34" ry="42"/><path d="M-34-126C-12-164 20-164 42-126L30-112H-28Z" fill="#f2ead6"/><path d="M-52-45C-28-80 33-79 55-43L70 92H-70Z"/><path d="M44-28L112-76" fill="none" stroke-linecap="round" stroke-width="9"/></g>
+<text x="185" y="630" text-anchor="middle" font-family="Georgia,serif" font-size="19" fill="#72543a">Nehru moves the Resolution</text>
+
+<!-- seal -->
+<g transform="translate(1160 610)"><circle r="105" fill="#f8edda" stroke="#b98a2f" stroke-width="5"/><circle r="78" fill="none" stroke="#1f4d8f" stroke-width="5" opacity=".8"/><circle r="12" fill="none" stroke="#1f4d8f" stroke-width="4"/><path d="M0-78V-12M0 78V12M-78 0H-12M78 0H12M-55-55L-8-8M55 55L8 8M55-55L8-8M-55 55L-8 8" stroke="#1f4d8f" stroke-width="3"/><text y="138" text-anchor="middle" font-family="Georgia,serif" font-size="17" letter-spacing="3" fill="#7c5e3c">CONSTITUENT ASSEMBLY</text></g>
+<rect width="1400" height="900" fill="transparent" filter="url(#grain)"/>
+</svg>
