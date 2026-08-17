@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "methodNote": "Genealogy links are editorial research paths, not claims of one-to-one legal derivation. Early debates are connected to later constitutional families only where the processed record shows the same constitutional problem or design question.",
+  "families": [
+    {
+      "id": "preamble",
+      "label": "Preamble",
+      "title": "Constitutional ideals and popular authority",
+      "finalFamily": "Preamble",
+      "summary": "Popular sovereignty, justice, liberty, equality and the political character of the future Republic appear first as constitutional objectives before becoming part of the Constitution's opening statement.",
+      "keywords": ["objectives resolution", "popular sovereignty", "justice", "liberty", "equality", "republic"],
+      "roots": [
+        {"date":"1946-12-13","stage":"Political programme","title":"Objectives Resolution moved","note":"Jawaharlal Nehru places sovereignty, justice, equality, freedoms and safeguards into one constitutional programme.","url":"sessions/1946-12-13.html"},
+        {"date":"1947-01-22","stage":"Assembly adoption","title":"Objectives Resolution adopted","note":"The Assembly accepts the Resolution as its constitutional direction after the December–January debate sequence.","url":"sessions/1947-01-22.html"},
+        {"date":"1947-04-29","stage":"Rights translation","title":"High-level ideals begin becoming enforceable clauses","note":"The April rights debate shows how broad constitutional promises have to be separated into legal rights, restrictions and non-justiciable principles.","url":"sessions/1947-04-29.html"}
+      ]
+    },
+    {
+      "id": "article-1",
+      "label": "Article 1 family",
+      "title": "India, the Union and its constituent territories",
+      "finalFamily": "Article 1 · Union and Territory",
+      "summary": "The early Assembly repeatedly tests what political community is being constituted, how Indian States enter it and what belongs to the Union before the final territorial provision exists.",
+      "keywords": ["union", "territory", "indian states", "states negotiating committee", "federalism"],
+      "roots": [
+        {"date":"1946-12-13","stage":"Political frame","title":"The future Union is described at the level of constitutional objectives","note":"The Resolution identifies the territorial and political community before the detailed federal structure is settled.","url":"sessions/1946-12-13.html"},
+        {"date":"1946-12-21","stage":"Representation machinery","title":"States Negotiating Committee created","note":"The Assembly creates a route for negotiating how Indian States will participate in constitution-making.","url":"sessions/1946-12-21.html"},
+        {"date":"1947-04-28","stage":"States enter","title":"Representatives of Indian States begin taking seats","note":"The political community becomes institutionally broader while the Union-subject framework remains deliberately provisional.","url":"sessions/1947-04-28.html"},
+        {"date":"1947-04-30","stage":"Structural drafting","title":"Union Constitution Committee authorised","note":"The Assembly creates a dedicated body to report on the main principles of the Union Constitution.","url":"sessions/1947-04-30.html#constitution-committees"}
+      ]
+    },
+    {
+      "id": "article-14",
+      "label": "Article 14 family",
+      "title": "Equality before law and equal protection",
+      "finalFamily": "Article 14 · Equality",
+      "summary": "Equality moves from an objective into a drafting problem: whether formal equality is enough, what discrimination means and how social hierarchy affects constitutional protection.",
+      "keywords": ["equality", "equal protection", "discrimination", "social hierarchy"],
+      "roots": [
+        {"date":"1946-12-13","stage":"Political promise","title":"Equality appears in the Objectives Resolution","note":"Equality is initially stated as a constitutional aim rather than a finished legal rule.","url":"sessions/1946-12-13.html"},
+        {"date":"1946-12-19","stage":"Representation challenge","title":"Members test equality against social and political exclusion","note":"Claims from minorities, Scheduled Castes, Adivasis and other groups make the social content of equality unavoidable.","url":"sessions/1946-12-19.html"},
+        {"date":"1947-04-29","stage":"Clause phase","title":"Equality enters the interim Fundamental Rights discussion","note":"The House begins converting equality into legal language and debating its relationship with discrimination and social structure.","url":"sessions/1947-04-29.html#equality"}
+      ]
+    },
+    {
+      "id": "article-16",
+      "label": "Article 16 family",
+      "title": "Equal opportunity in public employment",
+      "finalFamily": "Article 16 · Public Employment",
+      "summary": "The 30 April debate makes the equality problem concrete: open public employment must coexist with the need to correct severe under-representation.",
+      "keywords": ["public employment", "reservation", "representation", "equal opportunity"],
+      "roots": [
+        {"date":"1947-04-30","stage":"Clause-by-clause rights debate","title":"Public-employment equality and corrective reservation are debated together","note":"The Assembly tests how a general equality rule can coexist with measures for communities inadequately represented in public services.","url":"sessions/1947-04-30.html#public-employment"}
+      ]
+    },
+    {
+      "id": "article-17",
+      "label": "Article 17 family",
+      "title": "Abolition of untouchability",
+      "finalFamily": "Article 17 · Untouchability",
+      "summary": "The rights debate makes clear that legal equality cannot ignore entrenched caste exclusion. Members explicitly connect untouchability to the social structure the Constitution must confront.",
+      "keywords": ["untouchability", "caste", "scheduled castes", "social equality"],
+      "roots": [
+        {"date":"1946-12-19","stage":"Social equality","title":"Scheduled Caste claims expose the limits of abstract equality","note":"The debate on safeguards and representation shows why a Constitution must address historically structured exclusion rather than rely on general language alone.","url":"sessions/1946-12-19.html"},
+        {"date":"1947-04-29","stage":"Rights drafting","title":"P. R. Thakur links untouchability directly to caste","note":"The rights debate treats untouchability as a constitutional problem embedded in social hierarchy.","url":"sessions/1947-04-29.html#thakur"}
+      ]
+    },
+    {
+      "id": "article-19",
+      "label": "Article 19 family",
+      "title": "Freedoms and their permissible restrictions",
+      "finalFamily": "Article 19 · Freedoms",
+      "summary": "The Assembly does not debate liberty in the abstract for long. Speech, movement, association, residence and occupation quickly become arguments about public order, emergency, morality and legitimate regulation.",
+      "keywords": ["freedom", "speech", "association", "movement", "occupation", "restrictions"],
+      "roots": [
+        {"date":"1946-12-13","stage":"Political promise","title":"Freedoms appear in the Objectives Resolution","note":"Civil liberties enter the constitutional programme before their legal limitations are defined.","url":"sessions/1946-12-13.html"},
+        {"date":"1947-04-29","stage":"Enforceability dispute","title":"Members question whether restrictions can consume the right","note":"Somnath Lahiri and others challenge rights language that appears broad in promise but narrow in operation.","url":"sessions/1947-04-29.html#lahiri"},
+        {"date":"1947-04-30","stage":"Restriction design","title":"Freedom clauses are tested against public order and regulation","note":"The House works through how constitutional freedoms coexist with State power in emergencies and in the public interest.","url":"sessions/1947-04-30.html#lahiri-freedom"}
+      ]
+    },
+    {
+      "id": "articles-23-24",
+      "label": "Articles 23–24 family",
+      "title": "Forced labour and child labour protections",
+      "finalFamily": "Articles 23–24 · Exploitation",
+      "summary": "The 1 May sitting shows why anti-exploitation rights require careful drafting: a ban on forced labour must not accidentally prohibit legitimate compulsory public service, while child labour raises a distinct protective question.",
+      "keywords": ["forced labour", "begar", "compulsory service", "child labour", "exploitation"],
+      "roots": [
+        {"date":"1947-05-01","stage":"Hard-case review","title":"Forced-labour clause is remitted for reconsideration","note":"The Assembly identifies a drafting conflict between prohibiting forced labour and preserving the possibility of compulsory service for public purposes.","url":"sessions/1947-05-01.html#forced-labour"},
+        {"date":"1947-05-01","stage":"Protective right","title":"Child labour enters the same anti-exploitation field","note":"The debate distinguishes protection of children from the separate problem of forced adult labour and compulsory service.","url":"sessions/1947-05-01.html"}
+      ]
+    },
+    {
+      "id": "articles-25-28",
+      "label": "Articles 25–28 family",
+      "title": "Freedom of conscience and religion",
+      "finalFamily": "Articles 25–28 · Religion",
+      "summary": "Religious liberty is immediately tested against coercion, propagation, family authority, minors, social reform and the regulatory role of the State.",
+      "keywords": ["religion", "conscience", "propagation", "conversion", "social reform", "minor"],
+      "roots": [
+        {"date":"1947-05-01","stage":"Religious liberty","title":"Conscience and propagation are debated with limits","note":"Members ask how religious freedom should interact with coercion, public regulation and reform.","url":"sessions/1947-05-01.html#religion"},
+        {"date":"1947-05-01","stage":"Family and minority problem","title":"Conversion of minors exposes a hard boundary question","note":"The House confronts the relationship among personal conscience, parental authority and protection against coercion.","url":"sessions/1947-05-01.html#conversion-minors"}
+      ]
+    },
+    {
+      "id": "articles-29-30",
+      "label": "Articles 29–30 family",
+      "title": "Cultural and educational rights",
+      "finalFamily": "Articles 29–30 · Culture & Education",
+      "summary": "Minority protection evolves from general safeguards into concrete questions about language, culture, educational institutions and the balance between common citizenship and community autonomy.",
+      "keywords": ["minority", "culture", "language", "education", "institutions"],
+      "roots": [
+        {"date":"1946-12-17","stage":"Safeguard debate","title":"Minority security is tied to the legitimacy of the constitutional settlement","note":"Members debate whether unity requires reassurance, safeguards and political accommodation.","url":"sessions/1946-12-17.html"},
+        {"date":"1947-01-24","stage":"Institutional machinery","title":"Advisory Committee receives minority-safeguard work","note":"Minority questions are moved into a specialised committee structure rather than left as general promises.","url":"sessions/1947-01-24.html#p-2-15-13"},
+        {"date":"1947-05-01","stage":"Concrete cultural rights","title":"Language, culture and educational institutions reach the House","note":"The debate tests how common citizenship can coexist with minority cultural and educational autonomy.","url":"sessions/1947-05-01.html#cultural-rights"}
+      ]
+    },
+    {
+      "id": "article-32",
+      "label": "Article 32 family",
+      "title": "Constitutional remedies",
+      "finalFamily": "Article 32 · Remedies",
+      "summary": "The April rights debate repeatedly returns to the practical question behind every guarantee: what can an ordinary citizen actually do when the State violates it?",
+      "keywords": ["constitutional remedies", "court", "enforceability", "writ", "rights enforcement"],
+      "roots": [
+        {"date":"1947-04-29","stage":"Enforceability","title":"Rights are separated from non-justiciable principles","note":"The distinction forces the House to decide which constitutional promises must be judicially enforceable.","url":"sessions/1947-04-29.html#kunzru"},
+        {"date":"1947-04-29","stage":"Practical remedy","title":"Members ask whether poor citizens can actually use constitutional remedies","note":"Ranga and Sidhwa expose the distance between a formal legal remedy and an accessible one.","url":"sessions/1947-04-29.html#sidhwa-ranga"}
+      ]
+    },
+    {
+      "id": "directive-principles",
+      "label": "Part IV family",
+      "title": "Non-justiciable social and economic principles",
+      "finalFamily": "Part IV · Directive Principles",
+      "summary": "One of the most consequential early design choices is the separation between judicially enforceable rights and social-economic goals that guide the State without creating the same immediate court remedy.",
+      "keywords": ["directive principles", "non-justiciable", "economic rights", "social rights", "state policy"],
+      "roots": [
+        {"date":"1947-04-29","stage":"Rights classification","title":"The House confronts the justiciable / non-justiciable divide","note":"Members dispute whether major social and economic claims should sit outside the enforceable-rights category.","url":"sessions/1947-04-29.html#kunzru"},
+        {"date":"1947-04-29","stage":"Economic critique","title":"P. R. Thakur challenges the weakness of unenforceable economic guarantees","note":"The debate makes explicit that constitutional importance and judicial enforceability are different design choices.","url":"sessions/1947-04-29.html#thakur"}
+      ]
+    }
+  ]
+}
