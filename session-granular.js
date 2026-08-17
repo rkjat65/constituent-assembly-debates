@@ -2,7 +2,8 @@ const granularRoot=document.querySelector('[data-granular-session]');
 
 function esc(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
 function initials(name){return String(name||'').replace(/Dr\.|Mr\.|Mrs\.|Sardar|Pandit|The Hon.?ble/gi,'').trim().split(/\s+/).slice(0,2).map(p=>p[0]||'').join('').toUpperCase()||'•'}
-function media(person,prefix){if(person?.portrait)return `<img src="${prefix}${esc(person.portrait)}" alt="Illustrated portrait of ${esc(person.name)}">`;return `<span class="speaker-initial" aria-hidden="true">${esc(initials(person?.name))}</span>`}
+function approvedPortrait(path){return typeof path==='string'&&/\.(?:webp|png|jpe?g)$/i.test(path)}
+function media(person,prefix){if(approvedPortrait(person?.portrait))return `<img src="${prefix}${esc(person.portrait)}" alt="Generated archival portrait of ${esc(person.name)}">`;return `<span class="speaker-initial" aria-hidden="true">${esc(initials(person?.name))}</span>`}
 
 async function bootGranular(){
   if(!granularRoot)return;
