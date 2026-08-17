@@ -30,6 +30,9 @@ jobs:
       - name: Validate chronology and search indexes
         run: node scripts/check-indexes.mjs
 
+      - name: Validate provision genealogy
+        run: node scripts/check-genealogy.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
