@@ -1,64 +1,56 @@
 # Visual Asset Policy
 
-The archive has three layers and they must remain visibly distinct:
+The archive has three layers:
 
 1. **Official historical record** — debate text, dates, speakers, motions and metadata sourced from Parliament Digital Library / Lok Sabha Secretariat.
 2. **Editorial learning layer** — summaries, argument maps, theme labels, cross-links and explanatory notes authored for the archive.
-3. **Visual presentation layer** — verified archival imagery and clearly labelled generated editorial artwork used to improve recognition, memory, atmosphere or conceptual understanding.
+3. **Generated visual layer** — original editorial portraits and scene artwork created for this archive.
 
-## Hard rule for historical visuals
+## Non-negotiable personality rule
 
-Historical scenes and personalities must not be drawn with HTML/CSS/SVG primitives as a substitute for real artwork or evidence.
+Every personality image published in the website UI must come from the generated portrait library under `assets/portraits/`.
 
-Do not publish:
-- schematic code-drawn chamber scenes;
-- geometric or cartoon avatar faces;
-- distorted approximations of historical personalities;
-- generic stock portraits presented as historical likenesses;
-- generated images presented as archival photographs;
-- decorative diagrams that imply historical accuracy they do not possess.
+Do not publish personality photographs, stock portraits, scraped web images, archival headshots or code-drawn faces in the public interface. Historical photographs may be consulted as likeness references, but the published asset must be our generated editorial portrait.
 
-## Personality standard
+If a generated portrait has not yet been uploaded, use **text or initials only**. Never substitute another image merely to fill the slot.
 
-For a real historical personality, **recognisable likeness and documented provenance come before stylistic uniformity**.
+## Portrait style
 
-Preferred order:
-1. a suitable authenticated archival/public-domain or openly licensed portrait with documented provenance;
-2. a reviewed generated editorial portrait based on documented historical references and clearly labelled as generated;
-3. text or initials if neither option is good enough.
+All personality portraits belong to one visual family:
+- recognisable historical likeness first;
+- sepia / ink / watercolour editorial treatment;
+- warm parchment background;
+- restrained saffron, white and green accents;
+- dignified rather than comic caricature;
+- mobile-safe crop with strong facial readability;
+- no text baked into the image.
 
-A personality image is published only when the person is immediately recognisable, provenance is documented, the crop works at card and mobile sizes, and the visual is not misrepresented as evidence of a sitting it did not depict.
+The canonical filename registry is `assets/portraits/manifest.json`. Upload a portrait to the exact path mapped there and the website should begin using it without debate-by-debate asset edits.
 
-## Historical-scene standard
+## Historical scenes
 
-A reconstructed scene may be published as generated editorial illustration when it has period-appropriate architecture, clothing and furniture; a clear historical or learning purpose; enough detail to act as a memory anchor; and an explicit label that it is generated/editorial rather than documentary photography.
+Generated scene artwork is allowed when it has a clear historical or learning purpose, period-appropriate setting and an explicit editorial-reconstruction label where needed.
 
-If a strong scene is not ready, leave the slot text-led.
+Do not publish schematic HTML/CSS/SVG drawings as substitutes for artwork. Do not present generated scenes as archival photographs.
 
 ## Constitutional concept visuals
 
-Concept art may be symbolic, but it must still be genuine editorial artwork rather than a code-drawn infographic masquerading as historical illustration. Exact constitutional text remains separate and source-attributed.
+Concept art may be symbolic but must be genuine generated editorial artwork. Exact constitutional text remains separate and source-attributed.
 
-## Current approved visual assets
+## Current portrait source of truth
 
-### Verified archival personality imagery
-- `assets/rajendra-prasad-archival.jpg` — public-domain White House portrait used as a later likeness and labelled accordingly.
-- `assets/br-ambedkar-archival-1946.jpg` — 1946 archival photograph used for Ambedkar's early Constituent Assembly profile.
+`assets/portraits/manifest.json`
 
-### Reviewed generated personality portraits
-- `assets/sachchidananda-sinha-illustrated.webp`
-- `assets/jb-kripalani-illustrated.webp`
-- `assets/nehru-illustrated.webp`
+The first generated set already present includes Sachchidananda Sinha, Rajendra Prasad, B. R. Ambedkar, Jawaharlal Nehru, J. B. Kripalani, Sarvepalli Radhakrishnan, K. M. Munshi, Syama Prasad Mookerjee, Alladi Krishnaswami Ayyar and Hansa Mehta.
 
-### Generated historical scene
-- `assets/constitution-hall-generated.png` — generated editorial reconstruction used as a place/atmosphere anchor; never described as an archival photograph.
+Other names may safely render as initials until their matching `.webp` file is uploaded.
 
-## Resolution discipline
+## Permanently retired
 
-Visual assets must not be enlarged far beyond their native dimensions merely to fill a layout. If an available asset is modest in resolution, use a contained editorial card or crop rather than a soft full-width banner.
-
-## Retired approach
-
-The earlier code-drawn SVG Constitution Hall, Objectives Resolution and personality illustrations are permanently retired from the public visual system and must not be reintroduced.
+- archival personality photographs;
+- code-drawn SVG personalities;
+- code-drawn historical chamber scenes;
+- generic or substitute faces;
+- any personality asset outside the canonical generated portrait library.
 
 **Website and editorial direction: Radhakishan Jat.**
