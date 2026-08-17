@@ -1,31 +1,150 @@
 {
   "session": {
     "date": "1946-12-13",
-    "title": "The Objectives Resolution",
+    "title": "The Objectives Resolution — Full Speaker Timeline",
     "venue": "Constitution Hall, New Delhi",
     "startTime": "11:00",
+    "endTime": "13:00",
     "volume": "Vol. I",
     "chair": "Dr. Rajendra Prasad",
-    "primarySpeaker": "Jawaharlal Nehru",
     "primarySource": {
       "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
       "recordUrl": "https://eparlib.sansad.in/handle/123456789/762969?view_type=browse",
       "archiveUrl": "https://sansad.in/ls/debates/historical",
       "fileName": "cad_13-12-1946.pdf"
+    },
+    "transcriptReference": {
+      "publisher": "Constitution of India / Centre for Law and Policy Research",
+      "url": "https://www.constitutionofindia.net/debates/13-dec-1946/",
+      "note": "Used for paragraph-level navigation and speaker segmentation; Parliament Digital Library remains the canonical record."
     }
   },
-  "sections": [
+  "speakers": [
     {
-      "order": 1,
-      "title": "Resolution re: Aims and Objects",
-      "keySpeakers": ["Jawaharlal Nehru", "Purushottam Das Tandon"],
-      "themes": ["Popular sovereignty", "Republic", "Union", "Justice", "Equality", "Freedoms", "Minority safeguards", "World peace"]
+      "id": "chair",
+      "name": "Dr. Rajendra Prasad",
+      "shortName": "Rajendra Prasad",
+      "role": "Chairman",
+      "portrait": "assets/rajendra-prasad-engraved.svg",
+      "profile": "speakers/rajendra-prasad.html",
+      "stance": "Presiding",
+      "positionSummary": "Calls Nehru to move the Resolution, invites Purushottam Das Tandon to second it, then closes the day's sitting after noting more than forty amendments."
+    },
+    {
+      "id": "nehru",
+      "name": "Jawaharlal Nehru",
+      "role": "Member · United Provinces",
+      "portrait": "assets/nehru-illustrated.webp",
+      "profile": "speakers/jawaharlal-nehru.html",
+      "stance": "Moves Resolution",
+      "positionSummary": "Presents the Objectives Resolution as a pledge and constitutional direction: popular sovereignty, republic, Union, justice, equality, freedoms, safeguards and an international role for India."
+    },
+    {
+      "id": "tandon",
+      "name": "Purushottam Das Tandon",
+      "role": "Member · United Provinces",
+      "stance": "Seconds Resolution",
+      "positionSummary": "Supports the Resolution, opposes postponement, defends its use of 'people' without qualification and argues that the Assembly should proceed despite political obstacles."
     }
   ],
+  "interventions": [
+    {
+      "id": "p-1-5-1",
+      "speakerId": "chair",
+      "paragraphRef": "1.5.1",
+      "kind": "Call to move",
+      "summary": "The Chairman calls Jawaharlal Nehru to move the Resolution standing in his name.",
+      "tags": ["procedure", "Objectives Resolution"]
+    },
+    {
+      "id": "p-1-5-2",
+      "speakerId": "nehru",
+      "paragraphRef": "1.5.2–1.5.4",
+      "kind": "Purpose",
+      "summary": "Nehru says the Assembly has cleared procedural ground and now needs a clear picture of the constitutional structure it intends to build. He locates the Assembly's effective strength in the people rather than in a British state paper.",
+      "excerpt": "Governments are, in fact the expression of the will of the people.",
+      "tags": ["popular sovereignty", "Assembly legitimacy", "constitutional plan"]
+    },
+    {
+      "id": "p-1-5-5",
+      "speakerId": "nehru",
+      "paragraphRef": "1.5.5–1.5.9",
+      "kind": "Pledge",
+      "summary": "He describes the Resolution as a deliberately broad pledge designed to state fundamentals without prematurely settling every constitutional detail or deepening existing political divisions.",
+      "tags": ["pledge", "republic", "political inclusion"]
+    },
+    {
+      "id": "p-1-5-10",
+      "speakerId": "nehru",
+      "paragraphRef": "1.5.10",
+      "kind": "Resolution text",
+      "summary": "Nehru formally moves the eight-part Objectives Resolution: an independent sovereign republic, a Union, autonomous units, authority from the people, justice and freedoms, minority safeguards, territorial integrity and a contribution to world peace.",
+      "tags": ["Union", "justice", "equality", "freedoms", "minorities", "world peace"]
+    },
+    {
+      "id": "p-1-5-11",
+      "speakerId": "nehru",
+      "paragraphRef": "1.5.11–1.5.17",
+      "kind": "Constitutional philosophy",
+      "summary": "Nehru expands on the Resolution as a declaration rather than a finished constitutional clause, asking members to read its spirit in the context of India's historical transition and the experience of earlier constituent assemblies.",
+      "tags": ["declaration", "historical transition", "constitution-making"]
+    },
+    {
+      "id": "p-1-5-17-democracy",
+      "speakerId": "nehru",
+      "paragraphRef": "1.5.17",
+      "kind": "Democracy and socialism",
+      "summary": "He explains why the draft does not mechanically add labels such as 'democratic' or 'socialist': the Resolution instead tries to express democratic and social content while leaving institutional form to the Assembly.",
+      "tags": ["democracy", "socialism", "institutional design"]
+    },
+    {
+      "id": "p-1-5-18",
+      "speakerId": "nehru",
+      "paragraphRef": "1.5.18–1.5.19",
+      "kind": "International outlook",
+      "summary": "Nehru places constitution-making on a world stage, arguing that an independent India will have a significant international role and should approach other countries through friendship and cooperation.",
+      "tags": ["international relations", "world peace", "independence"]
+    },
+    {
+      "id": "p-1-5-20",
+      "speakerId": "chair",
+      "paragraphRef": "1.5.20",
+      "kind": "Seconding",
+      "summary": "After Nehru finishes, the Chairman calls Purushottam Das Tandon to second the Resolution.",
+      "tags": ["procedure", "seconding"]
+    },
+    {
+      "id": "p-1-5-21",
+      "speakerId": "tandon",
+      "paragraphRef": "1.5.21–1.5.26",
+      "kind": "Support",
+      "summary": "Tandon supports the Resolution as a historic declaration, links it to the freedom struggle, emphasises equality and argues against postponement until the Muslim League joins.",
+      "tags": ["freedom struggle", "equality", "postponement", "Muslim League"]
+    },
+    {
+      "id": "p-1-5-27",
+      "speakerId": "tandon",
+      "paragraphRef": "1.5.27–1.5.33",
+      "kind": "Meaning of people",
+      "summary": "He opposes qualifying popular sovereignty with narrower categories such as 'working people', rejects several proposed additions as premature detail and argues that the Assembly should preserve national unity while resisting external pressure.",
+      "excerpt": "The word ‘people’ means all the people.",
+      "tags": ["people", "sovereignty", "amendments", "unity"]
+    },
+    {
+      "id": "p-1-5-34",
+      "speakerId": "chair",
+      "paragraphRef": "1.5.34–1.5.36",
+      "kind": "Close",
+      "summary": "The Chairman notes that more than forty amendments have already been received, signals that later speakers may face time limits, and adjourns the Assembly until 3 PM on 16 December.",
+      "tags": ["amendments", "time limit", "adjournment"]
+    }
+  ],
+  "themes": ["Popular sovereignty", "Republic", "Union", "Justice", "Equality", "Freedoms", "Minority safeguards", "Democracy", "Socialism", "World peace"],
   "editorialPolicy": {
     "canonicalSource": "Parliamentary record",
-    "rule": "Primary-source text is kept distinct from editorial summaries and visual annotations."
+    "rule": "Primary-source wording is kept distinct from editorial summaries and visual annotations."
   },
+  "editorialStatus": "granular-speaker-timeline-live",
   "credits": {
     "website": "Radhakishan Jat",
     "visualDirection": "Archival parchment interface with restrained tricolour accents"
