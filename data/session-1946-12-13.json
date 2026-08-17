@@ -21,7 +21,7 @@
   },
   "speakers": [
     {"id":"chair","name":"Dr. Rajendra Prasad","shortName":"Rajendra Prasad","role":"Chairman","profile":"speakers/rajendra-prasad.html","stance":"Presiding","positionSummary":"Calls Nehru to move the Resolution, invites Purushottam Das Tandon to second it, then closes the day's sitting after noting more than forty amendments."},
-    {"id":"nehru","name":"Jawaharlal Nehru","role":"Member · United Provinces","portrait":"assets/nehru-illustrated.webp","profile":"speakers/jawaharlal-nehru.html","stance":"Moves Resolution","positionSummary":"Presents the Objectives Resolution as a pledge and constitutional direction: popular sovereignty, republic, Union, justice, equality, freedoms, safeguards and an international role for India."},
+    {"id":"nehru","name":"Jawaharlal Nehru","role":"Member · United Provinces","portrait":"assets/portraits/jawaharlal-nehru.webp","profile":"speakers/jawaharlal-nehru.html","stance":"Moves Resolution","positionSummary":"Presents the Objectives Resolution as a pledge and constitutional direction: popular sovereignty, republic, Union, justice, equality, freedoms, safeguards and an international role for India."},
     {"id":"tandon","name":"Purushottam Das Tandon","role":"Member · United Provinces","stance":"Seconds Resolution","positionSummary":"Supports the Resolution, opposes postponement, defends its use of 'people' without qualification and argues that the Assembly should proceed despite political obstacles."}
   ],
   "interventions": [

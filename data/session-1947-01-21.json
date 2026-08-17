@@ -18,7 +18,7 @@
     }
   },
   "speakers": [
-    {"id":"chair","name":"Dr. Rajendra Prasad","shortName":"Chair","role":"President · Constituent Assembly","profile":"speakers/rajendra-prasad.html","portrait":"assets/rajendra-prasad-archival.jpg","stance":"Presiding","positionSummary":"Manages the Steering Committee election, regulates the continuing Objectives Resolution debate, rules on Jayakar's attempt to add observations after withdrawing his amendment and schedules completion for 22 January."},
+    {"id":"chair","name":"Dr. Rajendra Prasad","shortName":"Chair","role":"President · Constituent Assembly","profile":"speakers/rajendra-prasad.html","portrait":"assets/portraits/rajendra-prasad.webp","stance":"Presiding","positionSummary":"Manages the Steering Committee election, regulates the continuing Objectives Resolution debate, rules on Jayakar's attempt to add observations after withdrawing his amendment and schedules completion for 22 January."},
     {"id":"chakravarty","name":"Rajkumar Chakravarty","shortName":"Chakravarty","role":"Member","stance":"Procedural query","positionSummary":"Asks when Steering Committee candidates may withdraw."},
     {"id":"madhava-menon","name":"K. Madhava Menon","shortName":"M. Menon","role":"Member","stance":"Proceed without further delay","positionSummary":"Argues that the Assembly has already granted the requested delay and should now pass the Objectives Resolution rather than reward continued absence."},
     {"id":"b-das","name":"B. Das","shortName":"B. Das","role":"Member","stance":"Supports Resolution · appeals to Muslim League","positionSummary":"Supports the Resolution while repeatedly appealing to Muslim League colleagues to enter the Assembly and state their differences inside the constitutional process."},
