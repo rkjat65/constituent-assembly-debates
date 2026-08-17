@@ -41,6 +41,34 @@ The project illustration is a transformed presentation asset and should not be t
 
 `assets/nehru-illustrated.webp` is a custom illustrated asset produced for this project. It is used as a visual interpretation, not as an official archival photograph.
 
+## Dr. Rajendra Prasad — visual reference
+
+`assets/rajendra-prasad-engraved.svg` is a custom vector editorial illustration created for this archive. The illustration uses a historical portrait only as likeness reference; the published asset is newly drawn in the archive's engraved/parchment system.
+
+Historical reference consulted:
+- Wikimedia Commons: `Black and white portrait photograph of Rajendra Prasad presented to the US.jpg`
+- Source URL: `https://commons.wikimedia.org/wiki/File:Black_and_white_portrait_photograph_of_Rajendra_Prasad_presented_to_the_US.jpg`
+- Author recorded on Commons: White House
+- Rights status recorded on Commons: Public Domain — United States federal government work
+
+The archive illustration is not an official portrait and is not a facsimile of the source photograph.
+
+## Constitution Hall editorial panorama
+
+`assets/assembly-hall-panorama.svg` is a newly drawn editorial reconstruction intended to establish the spatial character of a Constituent Assembly sitting. It is explicitly labelled as an editorial illustration.
+
+A historical reference consulted while establishing the scene language:
+- Wikimedia Commons: `Jawaharlal Nehru addressing the constituent assembly in 1946.jpg`
+- Source URL: `https://commons.wikimedia.org/wiki/File:Jawaharlal_Nehru_addressing_the_constituent_assembly_in_1946.jpg`
+- Author recorded on Commons: Unknown
+- Rights status recorded on Commons: Public Domain in India
+
+The panorama does not reproduce the photograph and should not be treated as a documentary image of a specific sitting.
+
+## Objectives Resolution visual
+
+`assets/objectives-resolution-visual.svg` is an original editorial composition. It deliberately resembles an archival parchment but is clearly labelled as **not a facsimile**. Any short quotation within the illustration is tied to the dated Constituent Assembly record used by the corresponding theme page.
+
 ## Project credit
 
 Website concept, information design and presentation by **Radhakishan Jat**.
