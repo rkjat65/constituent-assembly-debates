@@ -1,0 +1,56 @@
+name: Build portrait thumbnails
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/portraits/*.webp'
+      - '.github/workflows/portrait-thumbnails.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  thumbnails:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Install image tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y imagemagick
+      - name: Build lightweight gallery images
+        run: |
+          mkdir -p assets/portraits/thumbs
+          shopt -s nullglob
+          for src in assets/portraits/*.webp; do
+            name="$(basename "$src")"
+            dst="assets/portraits/thumbs/$name"
+            convert "$src" -auto-orient -resize '480x600>' -strip -quality 72 "$dst"
+            echo "built $dst"
+          done
+      - name: Commit thumbnail changes
+        id: commit
+        run: |
+          if git diff --quiet -- assets/portraits/thumbs; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'Portrait thumbnails already in sync.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/portraits/thumbs
+          git commit -m 'Build lightweight portrait thumbnails'
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+      - name: Redeploy Pages after generated thumbnails
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
