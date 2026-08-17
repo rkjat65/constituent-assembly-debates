@@ -37,7 +37,7 @@ jobs:
       - name: Commit thumbnail changes
         id: commit
         run: |
-          if git diff --quiet -- assets/portraits/thumbs; then
+          if [ -z "$(git status --porcelain -- assets/portraits/thumbs)" ]; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
             echo 'Portrait thumbnails already in sync.'
             exit 0
