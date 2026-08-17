@@ -24,7 +24,10 @@ GitHub Pages deploys automatically from `main`:
 ### Sitting-level visual readings
 - `/sessions/1946-12-09.html` — **9 December 1946: The First Sitting**
 - `/sessions/1946-12-10.html` — **10 December 1946: The Assembly Makes Its Rules**
+- `/sessions/1946-12-11.html` — **11 December 1946: A Permanent President Is Elected**
 - `/sessions/1946-12-13.html` — **13 December 1946: The Objectives Resolution**
+
+The 11 December page deliberately centres **Dr. Sachchidananda Sinha**, who announces the election and presides over the transition. It does not use a generic or placeholder Rajendra Prasad portrait. A Rajendra Prasad personality page will wait for a dedicated custom illustration.
 
 ### Personality profiles
 - `/speakers/sachchidananda-sinha.html`
@@ -35,14 +38,11 @@ GitHub Pages deploys automatically from `main`:
 - `/topics/rules-procedure.html`
 - `/topics/objectives-resolution.html`
 
-## Source-indexed but not yet sitting-level visual readings
+## Source-indexed but not yet sitting-level visual reading
 
-The archive now stores verified structured source data for:
-
-- `data/session-1946-12-11.json` — election of Dr. Rajendra Prasad as permanent Chairman
 - `data/session-1946-12-12.json` — Objectives Resolution discussion postponed
 
-These dates are visible in chronology as **source indexed**, but a full sitting page is intentionally withheld until the required custom personality artwork is ready. This prevents visual quality from being solved with generic portraits or placeholders.
+The date is visible in chronology as **source indexed**. A complete visual sitting page is added only when its content structure and visual treatment meet the archive standard.
 
 ## Portrait assets currently committed
 
@@ -105,4 +105,4 @@ Every GitHub Pages deployment runs `scripts/check-site.mjs` before publishing. T
 
 ## Development principle
 
-Accuracy comes before filling the interface. A date may be source-indexed before its full visual page is authored. Sitting-level pages become public only when source structure and required portrait assets meet the archive standard.
+Accuracy comes before filling the interface. A date may be source-indexed before its full visual page is authored. Sitting-level pages become public only when source structure and required visual assets meet the archive standard.
