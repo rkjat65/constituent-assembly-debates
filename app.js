@@ -44,7 +44,18 @@ document.querySelectorAll('.bookmark-btn,.save-mini').forEach((btn,index)=>{cons
 
 document.querySelectorAll('.play-mini,.excerpt-btn').forEach(btn=>{btn.addEventListener('click',()=>{const row=btn.closest('.timeline-row');if(!row)return;document.querySelectorAll('.timeline-row').forEach(r=>r.classList.remove('active'));row.classList.add('active');row.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'nearest'})})});
 
-const profileRoutes={'Dr. Sachchidananda Sinha':'sachchidananda-sinha.html','J. B. Kripalani':'jb-kripalani.html','Jawaharlal Nehru':'jawaharlal-nehru.html','Dr. Rajendra Prasad':'rajendra-prasad.html','Dr. B. R. Ambedkar':'br-ambedkar.html'};
+const profileRoutes={
+  'Dr. Sachchidananda Sinha':'sachchidananda-sinha.html',
+  'J. B. Kripalani':'jb-kripalani.html',
+  'Jawaharlal Nehru':'jawaharlal-nehru.html',
+  'Dr. Rajendra Prasad':'rajendra-prasad.html',
+  'Dr. B. R. Ambedkar':'br-ambedkar.html',
+  'S. Radhakrishnan':'sarvepalli-radhakrishnan.html',
+  'Dr. Sarvepalli Radhakrishnan':'sarvepalli-radhakrishnan.html',
+  'Syama Prasad Mookerjee':'syama-prasad-mookerjee.html',
+  'Syama Prasad Mukherjee':'syama-prasad-mookerjee.html',
+  'K. M. Munshi':'km-munshi.html'
+};
 document.querySelectorAll('.speaker-card').forEach(card=>{const name=card.querySelector('.speaker-copy h3')?.textContent.trim();const button=card.querySelector('.outline-btn');if(name&&button&&profileRoutes[name]&&button.tagName!=='A')button.addEventListener('click',()=>{window.location.href=`${rootPrefix}speakers/${profileRoutes[name]}`})});
 
 document.addEventListener('keydown',e=>{const tag=document.activeElement?.tagName;if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(tag)&&!document.getElementById('archiveSearch')){e.preventDefault();window.location.href=`${rootPrefix}search.html`}});
