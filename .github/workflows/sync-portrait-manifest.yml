@@ -1,0 +1,36 @@
+name: Sync generated portrait manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/session-*.json'
+      - 'scripts/sync-portrait-manifest.mjs'
+      - '.github/workflows/sync-portrait-manifest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Sync named speakers into portrait manifest
+        run: node scripts/sync-portrait-manifest.mjs
+      - name: Commit manifest changes
+        run: |
+          if git diff --quiet -- assets/portraits/manifest.json; then
+            echo 'Portrait manifest already in sync.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/portraits/manifest.json
+          git commit -m 'Sync portrait manifest with indexed speakers'
+          git pull --rebase origin main
+          git push origin HEAD:main
