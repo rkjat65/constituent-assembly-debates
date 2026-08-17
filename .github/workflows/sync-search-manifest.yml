@@ -4,12 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'data/search-index.json'
-      - 'data/search-speakers-granular.json'
-      - 'data/search-committees.json'
-      - 'data/search-session-*.json'
-      - 'data/search-speakers-*.json'
-      - 'data/search-theme-*.json'
+      - 'data/search-*.json'
       - 'scripts/sync-search-manifest.mjs'
 
 permissions:
