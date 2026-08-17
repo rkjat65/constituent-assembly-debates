@@ -1,7 +1,7 @@
 {
   "session": {
     "date": "1946-12-17",
-    "title": "Ambedkar on Unity and the Beginning",
+    "title": "Objectives Resolution Debate — Full Speaker Timeline",
     "venue": "Constitution Hall, New Delhi",
     "startTime": "11:00",
     "volume": "Vol. I",
@@ -10,15 +10,202 @@
       "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
       "recordUrl": "https://eparlib.sansad.in/handle/123456789/762964?view_type=browse",
       "fileName": "cad_17-12-1946.pdf"
+    },
+    "transcriptReference": {
+      "publisher": "Constitution of India / Centre for Law and Policy Research",
+      "url": "https://www.constitutionofindia.net/debates/17-dec-1946/",
+      "note": "Used for paragraph-level navigation and speaker segmentation; Parliament Digital Library remains the canonical record."
     }
   },
   "featuredIntervention": {
     "speaker": "Dr. B. R. Ambedkar",
     "theme": "Objectives Resolution",
-    "shortExcerpt": "Our difficulty is not with regard to the ultimate, our difficulty is with regard to the beginning."
+    "shortExcerpt": "Our difficulty is with regard to the beginning."
   },
-  "themes": ["Objectives Resolution","Unity","Political accommodation","Constitutional method","Assembly procedure"],
-  "visualAssets": ["assets/ambedkar-engraved.svg","assets/objectives-resolution-visual.svg"],
-  "editorialStatus": "visual-reading-live",
-  "credits": {"website":"Radhakishan Jat"}
+  "speakers": [
+    {
+      "id": "chair",
+      "name": "Dr. Rajendra Prasad",
+      "shortName": "Rajendra Prasad",
+      "role": "Chairman",
+      "portrait": "assets/rajendra-prasad-engraved.svg",
+      "profile": "speakers/rajendra-prasad.html",
+      "stance": "Presiding",
+      "positionSummary": "Opens the sitting, welcomes Vijayalakshmi Pandit, manages a list of more than fifty prospective speakers and regulates the debate."
+    },
+    {
+      "id": "masani",
+      "name": "M. R. Masani",
+      "role": "Member",
+      "stance": "Supports Resolution",
+      "positionSummary": "Reads the Resolution as a democratic-socialist programme that must combine social transformation with individual liberty and political democracy."
+    },
+    {
+      "id": "anthony",
+      "name": "Frank Anthony",
+      "role": "Member · Anglo-Indian representative",
+      "stance": "Supports Jayakar amendment",
+      "positionSummary": "Accepts the republican objective but supports deferring parts of the declaration in the interests of wider agreement."
+    },
+    {
+      "id": "mookerjee",
+      "name": "Syama Prasad Mookerjee",
+      "role": "Member",
+      "stance": "Opposes postponement",
+      "positionSummary": "Argues that the Assembly should proceed despite the Muslim League's absence and ground its authority in the people of India."
+    },
+    {
+      "id": "ambedkar",
+      "name": "Dr. B. R. Ambedkar",
+      "shortName": "B. R. Ambedkar",
+      "role": "Member · Constituent Assembly",
+      "portrait": "assets/ambedkar-engraved.svg",
+      "profile": "speakers/br-ambedkar.html",
+      "stance": "Urges prudence and accommodation",
+      "positionSummary": "Questions the Resolution's lack of remedies for rights, affirms the possibility of ultimate unity, and argues that the beginning must be inclusive enough to bring reluctant groups in."
+    },
+    {
+      "id": "ujjal-singh",
+      "name": "Sardar Ujjal Singh",
+      "role": "Member · Sikh representative",
+      "stance": "Supports Resolution",
+      "positionSummary": "Supports proceeding with the Resolution while insisting that Sikh and other minority safeguards must be meaningful and satisfactory."
+    },
+    {
+      "id": "govind-das",
+      "name": "Seth Govind Das",
+      "role": "Member",
+      "stance": "Supports Resolution",
+      "positionSummary": "Speaks in Hindustani, stresses freedom, socialism and democratic aspiration, and rejects external obstruction of the Assembly's work."
+    }
+  ],
+  "interventions": [
+    {
+      "id": "p-1-7-1",
+      "speakerId": "chair",
+      "paragraphRef": "1.7.1–1.7.3",
+      "kind": "Opening",
+      "summary": "The Chairman welcomes Vijayalakshmi Pandit, resumes the Objectives Resolution debate and explains that more than fifty members have sought to speak, making a practical time limit necessary.",
+      "tags": ["procedure", "speaker list", "chair"]
+    },
+    {
+      "id": "p-1-7-4",
+      "speakerId": "masani",
+      "paragraphRef": "1.7.4–1.7.6",
+      "kind": "Position",
+      "summary": "Masani begins from the problem of minorities and nation-building, arguing that constitutional safeguards matter but cannot substitute for the longer social process of becoming one political community.",
+      "excerpt": "an Indian first and last",
+      "tags": ["minorities", "nationhood", "integration"]
+    },
+    {
+      "id": "p-1-7-7",
+      "speakerId": "masani",
+      "paragraphRef": "1.7.7–1.7.13",
+      "kind": "Constitutional vision",
+      "summary": "He interprets the Resolution as democratic socialism: social and economic change pursued through political democracy, dispersed power and protection of the individual against an all-powerful state.",
+      "tags": ["democracy", "socialism", "liberty", "anti-totalitarianism"]
+    },
+    {
+      "id": "p-1-7-14",
+      "speakerId": "anthony",
+      "paragraphRef": "1.7.14",
+      "kind": "Amendment position",
+      "summary": "Frank Anthony supports Dr. M. R. Jayakar's amendment. He accepts the republican objective but argues that declaring detailed institutional arrangements should wait for wider participation and agreement.",
+      "tags": ["Jayakar amendment", "consensus", "Indian States", "Muslim League"]
+    },
+    {
+      "id": "p-1-7-15",
+      "speakerId": "mookerjee",
+      "paragraphRef": "1.7.15–1.7.18",
+      "kind": "Rebuttal",
+      "summary": "Mookerjee rejects postponement, arguing that waiting for every absent party would paralyse the Assembly and that the Resolution is not inconsistent with the Assembly's task of framing a free constitution.",
+      "tags": ["postponement", "Assembly authority", "Cabinet Mission"]
+    },
+    {
+      "id": "p-1-7-19",
+      "speakerId": "mookerjee",
+      "paragraphRef": "1.7.19–1.7.23",
+      "kind": "Authority",
+      "summary": "He argues that the Assembly must ultimately rely on popular legitimacy, proceed with constitution-making and demonstrate that minorities will be treated justly even if the Muslim League stays away.",
+      "excerpt": "Our sanction is the people of India",
+      "tags": ["popular legitimacy", "minorities", "Muslim League"]
+    },
+    {
+      "id": "p-1-7-25",
+      "speakerId": "ambedkar",
+      "paragraphRef": "1.7.25–1.7.26",
+      "kind": "Opening critique",
+      "summary": "Called earlier than expected, Ambedkar says he is speaking without preparation. He separates the Resolution into broadly non-controversial goals and politically controversial opening clauses.",
+      "tags": ["rights", "Resolution structure", "debate method"]
+    },
+    {
+      "id": "p-1-7-26-rights",
+      "speakerId": "ambedkar",
+      "paragraphRef": "1.7.26",
+      "kind": "Rights and remedies",
+      "summary": "Ambedkar argues that declaring rights is insufficient without remedies. He also questions how social and economic justice can become real without stronger economic commitments.",
+      "tags": ["fundamental rights", "remedies", "social justice", "economic justice"]
+    },
+    {
+      "id": "p-1-7-27",
+      "speakerId": "ambedkar",
+      "paragraphRef": "1.7.27–1.7.28",
+      "kind": "Unity",
+      "summary": "He says current political, social and economic divisions do not make eventual national unity impossible. The strategic problem is how the common journey begins.",
+      "excerpt": "our difficulty is with regard to the beginning",
+      "tags": ["unity", "political accommodation", "beginning"]
+    },
+    {
+      "id": "p-1-7-29",
+      "speakerId": "ambedkar",
+      "paragraphRef": "1.7.29–1.7.30",
+      "kind": "Prudence",
+      "summary": "Ambedkar supports another attempt at accommodation with the Muslim League. He distinguishes possessing power from exercising it wisely and warns against resolving the political conflict through force.",
+      "tags": ["prudence", "conciliation", "war", "statesmanship"]
+    },
+    {
+      "id": "p-1-7-31",
+      "speakerId": "ujjal-singh",
+      "paragraphRef": "1.7.31–1.7.39",
+      "kind": "Support",
+      "summary": "Ujjal Singh supports the Resolution and opposes indefinite postponement. He reads it as a declaration of freedom, Union and social justice while recognising the political difficulty around autonomous units and residuary powers.",
+      "tags": ["Union", "residuary powers", "postponement"]
+    },
+    {
+      "id": "p-1-7-40",
+      "speakerId": "ujjal-singh",
+      "paragraphRef": "1.7.40–1.7.46",
+      "kind": "Minority safeguards",
+      "summary": "He places the Sikh case before the House, recalls earlier assurances and argues that safeguards must secure a meaningful Sikh position within India rather than outside it.",
+      "tags": ["Sikhs", "minority safeguards", "Punjab", "anti-partition"]
+    },
+    {
+      "id": "p-1-7-47",
+      "speakerId": "govind-das",
+      "paragraphRef": "1.7.47–1.7.51",
+      "kind": "Language and social vision",
+      "summary": "Govind Das chooses to speak in the language of the country and links political freedom with a democratic and socialist social order.",
+      "tags": ["Hindustani", "socialism", "democracy", "freedom"]
+    },
+    {
+      "id": "p-1-7-52",
+      "speakerId": "govind-das",
+      "paragraphRef": "1.7.52–1.7.55",
+      "kind": "Conclusion",
+      "summary": "He argues that neither British policy nor Muslim League obstruction should stop the Assembly from pursuing its constitutional work and urges members to treat the Resolution as a serious pledge.",
+      "tags": ["Assembly resolve", "British Government", "Muslim League"]
+    },
+    {
+      "id": "p-1-7-56",
+      "speakerId": "chair",
+      "paragraphRef": "1.7.56",
+      "kind": "Adjournment",
+      "summary": "At 1 PM the Chairman adjourns the Assembly until the following morning, noting that the Rules Committee will meet in the afternoon.",
+      "tags": ["adjournment", "Rules Committee"]
+    }
+  ],
+  "themes": ["Objectives Resolution", "Unity", "Political accommodation", "Minority safeguards", "Rights and remedies", "Democracy", "Socialism", "Assembly procedure"],
+  "visualAssets": ["assets/ambedkar-engraved.svg", "assets/rajendra-prasad-engraved.svg", "assets/objectives-resolution-visual.svg"],
+  "editorialStatus": "granular-speaker-timeline-live",
+  "credits": {"website": "Radhakishan Jat"}
 }
