@@ -12,7 +12,7 @@
     {"date":"1946-12-11","status":"ready","route":"sessions/1946-12-11.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762975?view_type=browse"},
     {"date":"1946-12-12","status":"ready","route":"sessions/1946-12-12.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762974?view_type=browse"},
     {"date":"1946-12-13","status":"ready","route":"sessions/1946-12-13.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762969?view_type=browse"},
-    {"date":"1946-12-16","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762971?view_type=browse"},
+    {"date":"1946-12-16","status":"ready","route":"sessions/1946-12-16.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762971?view_type=browse"},
     {"date":"1946-12-17","status":"ready","route":"sessions/1946-12-17.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762964?view_type=browse"},
     {"date":"1946-12-18","status":"ready","route":"sessions/1946-12-18.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762966?view_type=browse"},
     {"date":"1946-12-19","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762970?view_type=browse"},
