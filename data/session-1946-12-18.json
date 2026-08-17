@@ -1,0 +1,66 @@
+{
+  "session": {
+    "date": "1946-12-18",
+    "title": "Rules, Minorities and the States — Full Speaker Timeline",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "11:00",
+    "endTime": "13:15",
+    "volume": "Vol. I",
+    "chair": "Dr. Rajendra Prasad",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762966?view_type=browse",
+      "fileName": "cad_18-12-1946.pdf"
+    },
+    "transcriptReference": {
+      "publisher": "Constitution of India / Centre for Law and Policy Research",
+      "url": "https://www.constitutionofindia.net/debates/18-dec-1946/",
+      "note": "Used for paragraph-level navigation and speaker segmentation; Parliament Digital Library remains the canonical record."
+    }
+  },
+  "speakers": [
+    {"id":"chair","name":"Dr. Rajendra Prasad","shortName":"Rajendra Prasad","role":"Chairman","portrait":"assets/rajendra-prasad-engraved.svg","profile":"speakers/rajendra-prasad.html","stance":"Presiding","positionSummary":"Manages both the Rules Committee programme and the continuing Objectives Resolution debate, balancing time, holidays and the Assembly's unfinished preliminary business."},
+    {"id":"anathasayanam","name":"Ananthasayanam Ayyangar","role":"Member","stance":"Requests Christmas recess","positionSummary":"Asks that the Assembly take the full Christmas week as holiday and resume in the new year."},
+    {"id":"kunzru","name":"Hriday Nath Kunzru","role":"Member","stance":"Favours postponement of Resolution","positionSummary":"First raises scheduling concerns, then argues that postponing the Objectives Resolution can increase the Assembly's moral authority and widen participation without delaying real constitutional work."},
+    {"id":"datta","name":"Dhirendra Nath Datta","role":"Member","stance":"Requests more rule-review time","positionSummary":"Argues members need time to study and amend the Rules; later interjects sceptically during Gopalaswami Ayyangar's proposal."},
+    {"id":"nichols-roy","name":"J. J. M. Nichols-Roy","role":"Member · Assam","stance":"Supports Resolution","positionSummary":"Defends the Resolution as democratic, protective of religious freedom and minorities, and capable of accommodating autonomous units and later participation."},
+    {"id":"khaitan","name":"Debi Prasad Khaitan","role":"Member","stance":"Prioritises Assembly work","positionSummary":"Urges members to give the Constituent Assembly and completion of its rules precedence over other engagements."},
+    {"id":"saksena","name":"Mohan Lal Saksena","role":"Member","stance":"Accelerate rules work","positionSummary":"Suggests altering the sitting schedule so the Rules Committee can finish and the House can begin consideration sooner."},
+    {"id":"sidhwa","name":"R. K. Sidhwa","role":"Member · Parsi representative","stance":"Supports Resolution","positionSummary":"Rejects British minority propaganda, cites Parsi experience as evidence against separate electorates and insists the Assembly should proceed."},
+    {"id":"tandon","name":"Purushottam Das Tandon","role":"Member","stance":"Allow deliberation on rules","positionSummary":"Notes scheduling constraints and argues members and parties need adequate time to study the Rules before the House takes them up."},
+    {"id":"patel","name":"Sardar Vallabhbhai Patel","role":"Member","stance":"Finish rules before dispersal","positionSummary":"Argues the Assembly's business must take precedence and the Rules should be completed before the preliminary session disperses."},
+    {"id":"santhanam","name":"K. Santhanam","role":"Member","stance":"Take rules in portions","positionSummary":"Suggests placing completed portions of the Rules before the House rather than waiting for the whole draft."},
+    {"id":"biswanath-das","name":"Sri Biswanath Das","role":"Member · Orissa","stance":"Supports Resolution","positionSummary":"Defends the Resolution's treatment of grouping, popular sovereignty and the States, and rejects the claim that the Assembly is a caste-Hindu body."},
+    {"id":"gopalaswami","name":"N. Gopalaswami Ayyangar","role":"Member","stance":"Press Resolution to conclusion","positionSummary":"Opposes adjournment, asserts broad constituent power, proposes a route on grouping and argues that authority in Indian States must ultimately derive from their people."}
+  ],
+  "interventions": [
+    {"id":"p-1-8-1","speakerId":"chair","paragraphRef":"1.8.1","kind":"Programme","summary":"The Chairman reports progress in the Rules Committee and proposes completing the preliminary session's essential work, including rules and committees, despite the approaching Christmas week.","tags":["Rules Committee","programme","preliminary session"]},
+    {"id":"p-1-8-2-9","speakerId":"anathasayanam","paragraphRef":"1.8.2","kind":"Scheduling","summary":"Ananthasayanam Ayyangar asks for the whole Christmas week as holiday before the Assembly resumes in the new year.","tags":["Christmas recess","schedule"]},
+    {"id":"p-1-8-4","speakerId":"kunzru","paragraphRef":"1.8.4","kind":"Scheduling","summary":"Kunzru says members had reasonably expected the session to finish before Christmas and asks the Chair to respect prior public engagements when fixing the next sitting dates.","tags":["schedule","Christmas recess"]},
+    {"id":"p-1-8-5-9","speakerId":"datta","paragraphRef":"1.8.5","kind":"Rules scrutiny","summary":"Datta argues that members need several days to study the Rules and prepare amendments, making immediate post-Christmas consideration impractical.","tags":["rules","amendments","deliberation"]},
+    {"id":"p-1-8-6-9","speakerId":"nichols-roy","paragraphRef":"1.8.6","kind":"Scheduling","summary":"Nichols-Roy explains the importance of Christmas holidays to Christian members and supports resuming in early January.","tags":["Christmas","minority practice","schedule"]},
+    {"id":"p-1-8-7-9","speakerId":"khaitan","paragraphRef":"1.8.7","kind":"Priority","summary":"Khaitan argues that Constituent Assembly work must take precedence and that the House should not disperse before completing essential procedure.","tags":["Assembly priority","rules"]},
+    {"id":"p-1-8-8-16","speakerId":"saksena","paragraphRef":"1.8.8","kind":"Scheduling proposal","summary":"Saksena proposes giving the Rules Committee more uninterrupted time and adjusting the House schedule so the completed report can be considered sooner.","tags":["Rules Committee","schedule"]},
+    {"id":"p-1-8-9-16","speakerId":"sidhwa","paragraphRef":"1.8.9","kind":"Rules scrutiny","summary":"Sidhwa counters that members and party groups need adequate time to study the report and submit amendments before voting on the Rules.","tags":["rules","party deliberation","amendments"]},
+    {"id":"p-1-8-12-13","speakerId":"patel","paragraphRef":"1.8.12–1.8.13","kind":"Priority","summary":"Patel says it is impossible to suit every member's engagements and insists that the Assembly finish the Rules before dispersing.","excerpt":"precedence should be given to the work of the Constituent Assembly",
+      "tags":["rules","Assembly priority","programme"]},
+    {"id":"p-1-8-14","speakerId":"santhanam","paragraphRef":"1.8.14–1.8.15","kind":"Procedure proposal","summary":"Santhanam suggests taking up Rules piecemeal as drafts become ready; the Chairman rejects the idea and says they should be considered as a whole.","tags":["rules","procedure","Chair ruling"]},
+    {"id":"p-1-8-16","speakerId":"tandon","paragraphRef":"1.8.16–1.8.17","kind":"Deliberation","summary":"Tandon argues against taking up the Rules during Christmas week because members and parties need time to digest them and prepare amendments. The Chair defers a final scheduling decision to the next day.","tags":["rules","deliberation","Christmas recess"]},
+    {"id":"p-1-8-18","speakerId":"nichols-roy","paragraphRef":"1.8.18–1.8.25","kind":"Objectives Resolution","summary":"Nichols-Roy supports the Resolution as a democratic programme, defends autonomous units, justice and freedom of religion, and rejects the claim that constitution-making by this Assembly amounts to a Hindu Raj.","excerpt":"a constitution to be made by the people of India",
+      "tags":["democracy","autonomy","religious freedom","minorities"]},
+    {"id":"p-1-8-26","speakerId":"sidhwa","paragraphRef":"1.8.26–1.8.29","kind":"Minority experience","summary":"Sidhwa uses the Parsi experience to reject British claims that minorities require externally imposed communal safeguards, denounces separate electorates and says the Assembly should continue its work.","tags":["Parsis","separate electorates","minorities","British policy"]},
+    {"id":"p-1-8-30","speakerId":"biswanath-das","paragraphRef":"1.8.30–1.8.34","kind":"Union and grouping","summary":"Biswanath Das supports the Resolution, argues that omission of the word 'group' leaves future arrangements open, defends popular sovereignty in the States and rejects descriptions of the Assembly as a caste-Hindu institution.","tags":["grouping","States","popular sovereignty","minorities"]},
+    {"id":"p-1-8-35","speakerId":"kunzru","paragraphRef":"1.8.35–1.8.41","kind":"Case for postponement","summary":"Kunzru argues that Jayakar's amendment is intended to facilitate rather than obstruct constitution-making. A short postponement, he says, could improve participation and moral authority without materially delaying the Assembly's work.","tags":["postponement","moral authority","Muslim League","Indian States"]},
+    {"id":"p-1-8-42","speakerId":"gopalaswami","paragraphRef":"1.8.42–1.8.45","kind":"Case against postponement","summary":"Gopalaswami Ayyangar urges the House to complete the Resolution during these sittings, arguing that an objectives declaration should guide constitution-making from the beginning rather than be postponed until the end.","excerpt":"we mean business",
+      "tags":["Objectives Resolution","postponement","constituent power"]},
+    {"id":"p-1-8-46","speakerId":"datta","paragraphRef":"1.8.46","kind":"Interjection","summary":"Datta briefly interjects during Gopalaswami Ayyangar's discussion of a possible grouping resolution.","excerpt":"Please save us from such prayerful resolutions!",
+      "tags":["interjection","grouping"]},
+    {"id":"p-1-8-47","speakerId":"gopalaswami","paragraphRef":"1.8.47–1.8.48","kind":"Grouping mechanism","summary":"Gopalaswami Ayyangar proposes that the Assembly itself consider modifying the grouping-vote rule rather than rely on a Federal Court reference, and stresses that the Assembly possesses powers necessary to accomplish its constituent task.","tags":["grouping","Federal Court","constituent power"]},
+    {"id":"p-1-8-49","speakerId":"gopalaswami","paragraphRef":"1.8.49–1.8.61","kind":"Indian States","summary":"He answers objections from princely States, argues that real authority must derive from the people even where a hereditary ruler remains, and envisages responsible constitutional government in the States within the future Union.","excerpt":"all powers of Government ... should be deemed to be derived from the people",
+      "tags":["Indian States","popular sovereignty","constitutional monarchy","Union"]},
+    {"id":"p-1-8-62","speakerId":"chair","paragraphRef":"1.8.62","kind":"Adjournment","summary":"At 1:15 PM the Chairman adjourns the House until 11 AM on 19 December.","tags":["adjournment","schedule"]}
+  ],
+  "themes": ["Rules and procedure","Objectives Resolution","Minorities","Religious freedom","Grouping","Indian States","Popular sovereignty","Constituent power","Postponement"],
+  "editorialStatus": "granular-speaker-timeline-live",
+  "credits": {"website":"Radhakishan Jat"}
+}
