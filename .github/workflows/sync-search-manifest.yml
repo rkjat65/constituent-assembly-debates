@@ -1,0 +1,38 @@
+name: Sync archive search manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/search-index.json'
+      - 'data/search-speakers-granular.json'
+      - 'data/search-committees.json'
+      - 'data/search-session-*.json'
+      - 'data/search-speakers-*.json'
+      - 'scripts/sync-search-manifest.mjs'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Sync search manifest
+        run: node scripts/sync-search-manifest.mjs
+      - name: Commit manifest changes
+        run: |
+          if git diff --quiet -- data/search-manifest.json; then
+            echo 'Search manifest already in sync.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/search-manifest.json
+          git commit -m 'Sync archive search manifest'
+          git pull --rebase origin main
+          git push origin HEAD:main
