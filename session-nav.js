@@ -15,13 +15,14 @@
     const next=records.slice(currentIndex+1).find(record=>record.status==='ready'&&record.route);
     const immediateNext=records[currentIndex+1];
     const format=date=>new Date(`${date}T00:00:00`).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}).toUpperCase();
+    const label=record=>record?.title||format(record?.date||'');
     const nav=document.createElement('nav');
     nav.className='session-continuity card';
     nav.setAttribute('aria-label','Chronological session navigation');
-    const prevHtml=previous?`<a class="session-continuity-link previous" href="${prefix}${previous.route}" data-session-prev><span>← Previous sitting</span><strong>${format(previous.date)}</strong></a>`:`<span class="session-continuity-link disabled"><span>← Previous sitting</span><strong>Start of prepared archive</strong></span>`;
+    const prevHtml=previous?`<a class="session-continuity-link previous" href="${prefix}${previous.route}" data-session-prev><span>← ${format(previous.date)}</span><strong>${label(previous)}</strong></a>`:`<span class="session-continuity-link disabled"><span>← Previous sitting</span><strong>Start of prepared archive</strong></span>`;
     let nextHtml='';
-    if(next){nextHtml=`<a class="session-continuity-link next" href="${prefix}${next.route}" data-session-next><span>Next sitting →</span><strong>${format(next.date)}</strong></a>`}
-    else if(immediateNext){nextHtml=`<a class="session-continuity-link next pending" href="${prefix}chronology.html"><span>Next sitting · being structured →</span><strong>${format(immediateNext.date)}</strong></a>`}
+    if(next){nextHtml=`<a class="session-continuity-link next" href="${prefix}${next.route}" data-session-next><span>${format(next.date)} →</span><strong>${label(next)}</strong></a>`}
+    else if(immediateNext){nextHtml=`<a class="session-continuity-link next pending" href="${prefix}chronology.html"><span>${format(immediateNext.date)} · being structured →</span><strong>${label(immediateNext)}</strong></a>`}
     else{nextHtml=`<a class="session-continuity-link next pending" href="${prefix}chronology.html"><span>Continue in chronology →</span><strong>See archive status</strong></a>`}
     nav.innerHTML=`${prevHtml}<div class="session-continuity-center"><span>Chronological reading</span><a href="${prefix}chronology.html">All sittings</a></div>${nextHtml}`;
     const source=document.querySelector('.source-strip');
