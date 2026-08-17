@@ -8,7 +8,20 @@ const failures=[];
 
 function fail(message){failures.push(message)}
 function readJson(file){try{return JSON.parse(fs.readFileSync(file,'utf8'))}catch(error){fail(`${path.relative(root,file)} invalid JSON: ${error.message}`);return null}}
-function targetFor(url){const [filePart,hash='']=url.split('#');return {file:path.join(root,filePart),hash}}
+function targetFor(url){const [filePart,hash='']=url.split('#');return {file:path.join(root,filePart),filePart,hash}}
+function anchorExists(file,filePart,hash){
+  const escaped=hash.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const html=fs.readFileSync(file,'utf8');
+  if(new RegExp(`id=["']${escaped}["']`).test(html))return true;
+  const sessionMatch=filePart.match(/^sessions\/(\d{4}-\d{2}-\d{2})\.html$/);
+  if(!sessionMatch)return false;
+  const dataFile=path.join(root,`data/session-${sessionMatch[1]}.json`);
+  if(!fs.existsSync(dataFile))return false;
+  try{
+    const session=JSON.parse(fs.readFileSync(dataFile,'utf8'));
+    return (session.interventions||[]).some(item=>item.id===hash);
+  }catch{return false}
+}
 
 const genealogy=readJson(genealogyPath);
 const search=readJson(searchPath);
@@ -25,9 +38,9 @@ if(genealogy){
     for(const rootItem of family.roots||[]){
       if(!rootItem.date||!rootItem.url||!rootItem.title)fail(`Provision family ${family.id} contains an incomplete root.`);
       if(/^https?:/i.test(rootItem.url))continue;
-      const {file,hash}=targetFor(rootItem.url);
+      const {file,filePart,hash}=targetFor(rootItem.url);
       if(!fs.existsSync(file)){fail(`Provision family ${family.id} points to missing route: ${rootItem.url}`);continue}
-      if(hash){const html=fs.readFileSync(file,'utf8');const escaped=hash.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');const hasId=new RegExp(`id=["']${escaped}["']`).test(html);if(!hasId)fail(`Provision family ${family.id} points to missing anchor #${hash} in ${path.relative(root,file)}`)}
+      if(hash&&!anchorExists(file,filePart,hash))fail(`Provision family ${family.id} points to missing anchor #${hash} in ${filePart} or its granular session data`);
     }
   }
   if(Array.isArray(search)){
