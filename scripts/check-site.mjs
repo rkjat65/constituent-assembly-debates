@@ -1,0 +1,93 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = process.cwd();
+const skipDirs = new Set(['.git', '.github', 'node_modules']);
+
+function walk(dir) {
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory() && skipDirs.has(entry.name)) continue;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...walk(full));
+    else out.push(full);
+  }
+  return out;
+}
+
+const files = walk(root);
+const htmlFiles = files.filter(file => file.endsWith('.html'));
+const failures = [];
+const checked = [];
+
+function rel(file) {
+  return path.relative(root, file).split(path.sep).join('/');
+}
+
+function isExternal(value) {
+  return /^(?:https?:|mailto:|tel:|javascript:|data:|\/\/)/i.test(value);
+}
+
+function resolveLocal(sourceFile, rawValue) {
+  const value = rawValue.trim();
+  if (!value || value === '#' || value.startsWith('#') || isExternal(value)) return null;
+  const clean = decodeURIComponent(value.split('#')[0].split('?')[0]);
+  if (!clean) return null;
+  if (clean.startsWith('/')) return path.join(root, clean.replace(/^\/+/, ''));
+  return path.resolve(path.dirname(sourceFile), clean);
+}
+
+for (const htmlFile of htmlFiles) {
+  const html = fs.readFileSync(htmlFile, 'utf8');
+  const attributes = [...html.matchAll(/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi)];
+  for (const match of attributes) {
+    const raw = match[1];
+    const target = resolveLocal(htmlFile, raw);
+    if (!target) continue;
+
+    let candidate = target;
+    if (fs.existsSync(candidate) && fs.statSync(candidate).isDirectory()) {
+      candidate = path.join(candidate, 'index.html');
+    }
+
+    checked.push(`${rel(htmlFile)} -> ${raw}`);
+    if (!fs.existsSync(candidate)) {
+      failures.push(`${rel(htmlFile)} references missing local target: ${raw}`);
+    }
+  }
+
+  // Personality illustrations are intentionally repository-local. Flag old SVG portrait references.
+  const oldPortraitRefs = [...html.matchAll(/assets\/[^"']*-illustrated\.svg/gi)];
+  for (const match of oldPortraitRefs) {
+    failures.push(`${rel(htmlFile)} still references retired SVG personality asset: ${match[0]}`);
+  }
+}
+
+// Required public routes/assets should always exist.
+const required = [
+  'index.html',
+  'chronology.html',
+  'speakers.html',
+  'themes.html',
+  'styles.css',
+  'app.js',
+  'assets/sachchidananda-sinha-illustrated.webp',
+  'assets/jb-kripalani-illustrated.webp',
+  'assets/nehru-illustrated.webp',
+  'sessions/1946-12-09.html',
+  'sessions/1946-12-10.html',
+  'sessions/1946-12-13.html'
+];
+
+for (const item of required) {
+  if (!fs.existsSync(path.join(root, item))) failures.push(`Required site file missing: ${item}`);
+}
+
+if (failures.length) {
+  console.error('\nStatic archive integrity check FAILED:\n');
+  for (const failure of failures) console.error(`  - ${failure}`);
+  console.error(`\nChecked ${htmlFiles.length} HTML files and ${checked.length} local references.`);
+  process.exit(1);
+}
+
+console.log(`Static archive integrity check passed: ${htmlFiles.length} HTML files, ${checked.length} local references, ${required.length} required routes/assets.`);
