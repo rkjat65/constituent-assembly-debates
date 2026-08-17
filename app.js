@@ -16,6 +16,38 @@ if(themeToggle){
   });
 }
 
+// Keep navigation correct whether the current page lives at repository root or /sessions/.
+const inSessions=window.location.pathname.includes('/sessions/');
+const rootPrefix=inSessions?'../':'';
+const navRoutes={
+  'Home':`${rootPrefix}index.html`,
+  'Sessions':`${rootPrefix}chronology.html`,
+  'Speakers':`${rootPrefix}speakers.html`,
+  'Topics':`${rootPrefix}themes.html`,
+  'Chronology':`${rootPrefix}chronology.html`,
+  'Provisions':`${rootPrefix}themes.html`
+};
+document.querySelectorAll('.main-nav .nav-item').forEach(link=>{
+  const label=link.textContent.trim();
+  Object.entries(navRoutes).forEach(([name,url])=>{
+    if(label.endsWith(name))link.setAttribute('href',url);
+  });
+});
+
+// Never leave an empty portrait box if a future asset path is wrong.
+document.querySelectorAll('img').forEach(img=>{
+  img.addEventListener('error',()=>{
+    img.style.display='none';
+    const parent=img.parentElement;
+    if(parent && !parent.querySelector('.portrait-fallback')){
+      const fallback=document.createElement('div');
+      fallback.className='portrait-fallback';
+      fallback.textContent=img.alt?.replace('Custom illustrated archival portrait of ','').replace('Custom illustrated portrait of ','')||'Portrait asset';
+      parent.appendChild(fallback);
+    }
+  },{once:true});
+});
+
 document.querySelectorAll('[data-share]').forEach(btn=>{
   btn.addEventListener('click',async()=>{
     const shareData={title:document.title,url:window.location.href};
