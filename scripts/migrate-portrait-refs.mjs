@@ -15,6 +15,12 @@ const replacements=new Map([
   ['Archival portrait','Generated editorial portrait'],
   ['Archival photograph','Generated editorial portrait']
 ]);
+const galleryFiles=new Set(['index.html','themes.html','visual-atlas.html','speakers.html']);
+const profileLinkReplacements=new Map([
+  ['search.html?q=Sarvepalli%20Radhakrishnan','speakers/sarvepalli-radhakrishnan.html'],
+  ['search.html?q=Syama%20Prasad%20Mookerjee','speakers/syama-prasad-mookerjee.html'],
+  ['search.html?q=K.%20M.%20Munshi','speakers/km-munshi.html']
+]);
 
 function walk(dir){
   const out=[];
@@ -32,10 +38,15 @@ for(const file of walk(root)){
   const before=fs.readFileSync(file,'utf8');
   let after=before;
   for(const [from,to] of replacements)after=after.split(from).join(to);
+  const relative=path.relative(root,file).split(path.sep).join('/');
+  if(galleryFiles.has(relative)){
+    after=after.replace(/assets\/portraits\/(?!thumbs\/)([^"'<>]+\.webp)/g,'assets/portraits/thumbs/$1');
+    for(const [from,to] of profileLinkReplacements)after=after.split(from).join(to);
+  }
   if(after!==before){
     fs.writeFileSync(file,after);
     changed++;
-    console.log(`updated ${path.relative(root,file)}`);
+    console.log(`updated ${relative}`);
   }
 }
-console.log(`Canonical portrait migration updated ${changed} files.`);
+console.log(`Portrait source migration updated ${changed} files.`);
