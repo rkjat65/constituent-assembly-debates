@@ -13,11 +13,7 @@ const legacyPortraitMap={
 };
 document.querySelectorAll('img[src]').forEach(img=>{const raw=img.getAttribute('src')||'';const match=Object.entries(legacyPortraitMap).find(([oldPath])=>raw.endsWith(oldPath));if(match){img.src=`${rootPrefix}${match[1]}`;img.alt=(img.alt||'Portrait').replace(/Archival photograph|Archival portrait|Generated archival caricature/gi,'Generated editorial portrait')}});
 
-if(!document.querySelector('link[data-archive-ux]')){
-  const ux=document.createElement('link');
-  ux.rel='stylesheet';ux.href=`${rootPrefix}ux.css`;ux.dataset.archiveUx='true';
-  document.head.appendChild(ux);
-}
+if(!document.querySelector('link[data-archive-ux]')){const ux=document.createElement('link');ux.rel='stylesheet';ux.href=`${rootPrefix}ux.css`;ux.dataset.archiveUx='true';document.head.appendChild(ux)}
 
 const themeToggle=document.getElementById('themeToggle');
 const storedTheme=localStorage.getItem('cad-theme');
@@ -26,23 +22,16 @@ function refreshThemeIcon(){if(!themeToggle)return;const dark=document.body.clas
 refreshThemeIcon();
 if(themeToggle){themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('cad-theme',document.body.classList.contains('dark')?'dark':'light');refreshThemeIcon()})}
 
-const navRoutes={Home:`${rootPrefix}index.html`,Sessions:`${rootPrefix}chronology.html`,Speakers:`${rootPrefix}speakers.html`,Topics:`${rootPrefix}themes.html`,Chronology:`${rootPrefix}chronology.html`,Documents:`${rootPrefix}documents.html`,Provisions:`${rootPrefix}provisions.html`,'Visual Atlas':`${rootPrefix}visual-atlas.html`,Search:`${rootPrefix}search.html`};
+// Committees became a first-class explorer once the archive reached the January 1947 institutional phase.
+document.querySelectorAll('.main-nav').forEach(nav=>{if(![...nav.querySelectorAll('.nav-item')].some(a=>a.textContent.trim().endsWith('Committees'))){const anchor=[...nav.querySelectorAll('.nav-item')].find(a=>a.textContent.trim().endsWith('Documents'));const link=document.createElement('a');link.href=`${rootPrefix}committees.html`;link.className='nav-item';link.innerHTML='<span>◫</span>Committees';if(anchor)nav.insertBefore(link,anchor);else nav.appendChild(link)}});
+
+const navRoutes={Home:`${rootPrefix}index.html`,Sessions:`${rootPrefix}chronology.html`,Speakers:`${rootPrefix}speakers.html`,Topics:`${rootPrefix}themes.html`,Chronology:`${rootPrefix}chronology.html`,Committees:`${rootPrefix}committees.html`,Documents:`${rootPrefix}documents.html`,Provisions:`${rootPrefix}provisions.html`,'Visual Atlas':`${rootPrefix}visual-atlas.html`,Search:`${rootPrefix}search.html`};
 document.querySelectorAll('.main-nav .nav-item').forEach(link=>{const label=link.textContent.trim();Object.entries(navRoutes).forEach(([name,url])=>{if(label.endsWith(name))link.setAttribute('href',url)})});
 
 const activeNav=document.querySelector('.main-nav .nav-item.active');
 if(activeNav&&window.matchMedia('(max-width:820px)').matches){requestAnimationFrame(()=>activeNav.scrollIntoView({block:'nearest',inline:'center'}))}
 
-document.querySelectorAll('img').forEach(img=>{
-  img.decoding='async';
-  if(!img.closest('.profile-hero,.home-scene')&&!img.hasAttribute('loading'))img.loading='lazy';
-  img.addEventListener('error',()=>{
-    img.style.display='none';
-    const parent=img.parentElement;
-    if(parent&&!parent.querySelector('.portrait-fallback')){
-      const fallback=document.createElement('div');fallback.className='portrait-fallback';fallback.setAttribute('role','img');fallback.setAttribute('aria-label',img.alt||'Visual asset unavailable');fallback.textContent=img.alt||'Visual asset unavailable';parent.appendChild(fallback)
-    }
-  },{once:true})
-});
+document.querySelectorAll('img').forEach(img=>{img.decoding='async';if(!img.closest('.profile-hero,.home-scene')&&!img.hasAttribute('loading'))img.loading='lazy';img.addEventListener('error',()=>{img.style.display='none';const parent=img.parentElement;if(parent&&!parent.querySelector('.portrait-fallback')){const fallback=document.createElement('div');fallback.className='portrait-fallback';fallback.setAttribute('role','img');fallback.setAttribute('aria-label',img.alt||'Visual asset unavailable');fallback.textContent=img.alt||'Visual asset unavailable';parent.appendChild(fallback)}},{once:true})});
 
 const progress=document.createElement('div');progress.className='page-progress';progress.setAttribute('aria-hidden','true');document.body.appendChild(progress);
 let progressQueued=false;
