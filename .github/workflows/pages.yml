@@ -27,6 +27,9 @@ jobs:
       - name: Validate site integrity
         run: node scripts/check-site.mjs
 
+      - name: Validate chronology and search indexes
+        run: node scripts/check-indexes.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
