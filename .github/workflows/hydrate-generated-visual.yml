@@ -1,0 +1,32 @@
+name: Hydrate generated Constitution Hall visual
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hydrate-generated-visual.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  hydrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download generated artwork
+        env:
+          CANVA_IMAGE_URL: "https://s3.amazonaws.com/document-export.canva.com/KfBYU/DAHSjwKfBYU/1/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHYGFFNMW3%2F20260816%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260816T172120Z&X-Amz-Expires=84578&X-Amz-Signature=051cf758b29a36e948304d41d246a435e51c8c8f844c3365bd9df0c4ca6353c9&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2017%20Aug%202026%2016%3A50%3A58%20GMT"
+        run: |
+          mkdir -p assets
+          curl --fail --location --retry 3 "$CANVA_IMAGE_URL" -o assets/constitution-hall-generated.png
+          file assets/constitution-hall-generated.png
+          test -s assets/constitution-hall-generated.png
+      - name: Commit generated artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/constitution-hall-generated.png
+          git commit -m "Add generated Constitution Hall artwork"
+          git push
