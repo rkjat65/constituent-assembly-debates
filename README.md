@@ -1,16 +1,28 @@
 # Constituent Assembly Debates — Visual Archive
 
-A visual-first platform for exploring the Constituent Assembly Debates of India **chronologically, by theme, by personality and by constitutional provision** without turning the archive into a wall of text.
+A visual-first platform for exploring the Constituent Assembly Debates of India **chronologically, by theme, personality and constitutional provision** without reducing the record to either a text wall or a collection of famous quotations.
 
 **Website concept, information design and presentation by Radhakishan Jat.**
 
 ## Live preview
 
-GitHub Pages deploys automatically from `main`:
-
 `https://rkjat65.github.io/constituent-assembly-debates/`
 
-## Current public routes
+GitHub Pages deploys automatically from `main` after an integrity check.
+
+## Core product model
+
+The archive separates three layers:
+
+1. **Official historical record** — Parliament Digital Library / Lok Sabha Secretariat is canonical.
+2. **Editorial learning layer** — speaker segmentation, argument summaries, themes, links and context.
+3. **Generated visual layer** — approved editorial artwork only.
+
+Historical scenes and personalities are **not** drawn with HTML/CSS/SVG primitives as substitutes for artwork. If a strong generated asset is not ready, the relevant slot remains text- or initials-led.
+
+See [VISUAL_ASSET_POLICY.md](VISUAL_ASSET_POLICY.md).
+
+## Public routes
 
 ### Core explorers
 - `/` — Archive Home
@@ -19,100 +31,77 @@ GitHub Pages deploys automatically from `main`:
 - `/themes.html` — thematic explorer
 - `/documents.html` — Parliament Digital Library source index
 - `/provisions.html` — constitutional-provision cross-reference layer
-- `/visual-atlas.html` — custom editorial artwork and visual-system explorer
-- `/search.html` — client-side search across the prepared archive index
+- `/visual-atlas.html` — approved generated editorial artwork
+- `/search.html` — archive search
 
-### Sitting-level visual readings
-- `/sessions/1946-12-09.html` — **9 December 1946: The First Sitting**
-- `/sessions/1946-12-10.html` — **10 December 1946: The Assembly Makes Its Rules**
-- `/sessions/1946-12-11.html` — **11 December 1946: A Permanent President Is Elected**
-- `/sessions/1946-12-12.html` — **12 December 1946: Before the Objectives Resolution**
-- `/sessions/1946-12-13.html` — **13 December 1946: The Objectives Resolution**
-- `/sessions/1946-12-17.html` — **17 December 1946: Ambedkar on Unity and the Beginning**
+### Opening sitting readings
+- `/sessions/1946-12-09.html` — The First Sitting
+- `/sessions/1946-12-10.html` — The Assembly Makes Its Rules
+- `/sessions/1946-12-11.html` — A Permanent President Is Elected
+- `/sessions/1946-12-12.html` — Before the Objectives Resolution
 
-### Personality profiles
+### Granular all-speaker timelines
+- `/sessions/1946-12-13.html` — **The Objectives Resolution** · 3 speaking voices
+- `/sessions/1946-12-16.html` — **Postpone or Proceed?** · 19 speaking / collective voices · 29 intervention blocks
+- `/sessions/1946-12-17.html` — **Competing Paths to Unity** · 7 speaking voices · 15 intervention blocks
+- `/sessions/1946-12-18.html` — **Rules, Minorities and the States** · 13 speaking voices
+- `/sessions/1946-12-19.html` — **Rights, Representation and the Assembly's Authority** · 21 speaking / collective voices · 28 intervention blocks
+
+The granular model records each intervention as:
+
+`speaker → paragraph reference → intervention type → editorial summary → optional short exact excerpt → themes → source`
+
+This allows the same underlying record to power chronology, personality, theme and eventually constitutional-provision views.
+
+## Personality profiles
+
 - `/speakers/sachchidananda-sinha.html`
 - `/speakers/rajendra-prasad.html`
 - `/speakers/br-ambedkar.html`
 - `/speakers/jb-kripalani.html`
 - `/speakers/jawaharlal-nehru.html`
 
-### Theme readings
-- `/topics/rules-procedure.html`
-- `/topics/objectives-resolution.html`
+A profile can exist before its generated portrait. No placeholder face is substituted.
 
-## Visual assets currently committed
+## Approved generated portrait assets
 
-The visual layer is a product feature, not page decoration. Assets are repository-hosted so GitHub Pages does not depend on temporary external URLs.
-
-### Personality illustrations
 - `assets/sachchidananda-sinha-illustrated.webp`
 - `assets/jb-kripalani-illustrated.webp`
 - `assets/nehru-illustrated.webp`
-- `assets/rajendra-prasad-engraved.svg`
-- `assets/ambedkar-engraved.svg`
 
-### Editorial scene / idea illustrations
-- `assets/assembly-hall-panorama.svg`
-- `assets/objectives-resolution-visual.svg`
+Rajendra Prasad, B. R. Ambedkar and additional personality portraits remain in the generated-art queue.
 
-The vector assets are intentionally labelled as editorial illustrations. They are not official portraits, archival photographs or facsimiles.
+## Retired visual approach
 
-## Locked visual direction
-
-The approved light-theme debate reader is the master design reference for this project.
-
-- warm cream / parchment background;
-- restrained saffron, green and Ashoka-blue accents;
-- serif editorial typography and fine archival borders;
-- custom illustrated personality portraits rather than generic stock/headshot assets;
-- Parliament / Constituent Assembly / elephant / archival motifs used sparingly;
-- speaker card + large excerpt + editorial summary + annotations + linked themes/documents;
-- structured visual transcript instead of long uninterrupted transcript text;
-- editorial reconstructions are visibly labelled;
-- a dark theme may exist, but it inherits the same information architecture rather than becoming a separate redesign.
-
-See [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Earlier code-drawn SVG chamber, document and personality illustrations are retired from the public visual system. Public HTML is validated to prevent those assets from being reintroduced accidentally.
 
 ## Source policy
 
-The **Parliament Digital Library / Lok Sabha Secretariat** is the canonical source for debate records used by this project. The interface links back to the official record rather than mirroring complete PDFs or full transcripts.
+The **Parliament Digital Library / Lok Sabha Secretariat** remains the canonical source for dated debate records. Paragraph-numbered third-party transcriptions may be used as a navigation and segmentation aid, but not as a replacement for the official record.
 
-The project explicitly separates:
-
-1. primary-source excerpts and metadata;
-2. editorial summaries;
-3. thematic / constitutional links;
-4. custom visual assets.
+The project keeps distinct:
+- primary-source excerpts and metadata;
+- editorial summaries;
+- thematic / constitutional links;
+- generated artwork.
 
 We do not invent timestamps, quotations or archival audio. See [SOURCES.md](SOURCES.md).
 
 ## Data layer
 
-Structured session, chronology and search data live under `/data` so the archive can later move from static prototypes to a generated application without rewriting the content model.
+Session data lives under `/data`. Granular sessions contain `speakers[]` and `interventions[]`; `session-granular.js` renders speaker filters, intervention streams and speaker matrices from those files.
 
-Current visual-reading data includes:
-
-- `data/session-1946-12-09.json`
-- `data/session-1946-12-10.json`
-- `data/session-1946-12-11.json`
-- `data/session-1946-12-12.json`
-- `data/session-1946-12-13.json`
-- `data/session-1946-12-17.json`
-- `data/chronology.json`
-- `data/search-index.json`
+Search is also data-driven and loads the core index plus granular speaker supplements, allowing new dates to be added without turning `search.js` into a hand-written content database.
 
 ## Deployment reliability
 
-GitHub Pages runs `scripts/check-site.mjs` before every deployment. The check currently validates:
-
-- local HTML links and asset references;
-- JSON parsing;
-- SVG markup and accessible titles;
-- presence of required routes, portraits and visual assets.
-
-A broken local route or missing key illustration should therefore stop deployment rather than silently publish a damaged archive.
+`scripts/check-site.mjs` runs before GitHub Pages deployment. It validates:
+- local routes and assets;
+- JSON syntax;
+- granular-session speaker/intervention integrity;
+- required public routes/data files;
+- the generated-art-only rule by rejecting retired coded visuals in public HTML.
 
 ## Development principle
 
-Accuracy comes before filling the interface. A date may be source-indexed before its complete visual reading exists. A full visual page is published only when the record, editorial structure and visual treatment are ready.
+**Accuracy before filling the interface.** A source can be indexed before its reading is complete. A generated image appears only after it is visually and historically good enough. The archive should become richer without becoming less trustworthy.
