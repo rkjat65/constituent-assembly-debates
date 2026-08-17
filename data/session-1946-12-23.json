@@ -1,0 +1,55 @@
+{
+  "session": {
+    "date": "1946-12-23",
+    "title": "Rules Adopted, Committees Elected — Volume I Closes",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "13:35",
+    "resumeTime": "16:00",
+    "volume": "Vol. I",
+    "chair": "Dr. Rajendra Prasad",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762979?view_type=browse",
+      "fileName": "cad_23-12-1946.pdf"
+    },
+    "transcriptReference": {
+      "publisher": "Constitution of India / Centre for Law and Policy Research",
+      "url": "https://www.constitutionofindia.net/debates/23-dec-1946/",
+      "note": "Used for paragraph-level navigation and speaker segmentation; Parliament Digital Library remains canonical."
+    }
+  },
+  "speakers": [
+    {"id":"chair","name":"Dr. Rajendra Prasad","shortName":"Chair","role":"Chairman / President","profile":"speakers/rajendra-prasad.html","stance":"Presiding","positionSummary":"Guides formal adoption of the Rules, manages committee nominations and elections, records that no Federal Court reference is sought and closes the December session."},
+    {"id":"ayyangar","name":"Ananthasayanam Ayyangar","shortName":"Ayyangar","role":"Member","stance":"Seeks validation of prior proceedings","positionSummary":"Twice proposes that proceedings taken before adoption of the Rules be expressly treated as valid and binding."},
+    {"id":"munshi","name":"K. M. Munshi","shortName":"Munshi","role":"Member · Rules Committee","stance":"Moves final adoption","positionSummary":"Moves formal adoption of the Rules accepted in Committee and argues that no retrospective validation clause is needed."},
+    {"id":"subbarayan","name":"P. Subbarayan","shortName":"Subbarayan","role":"Member","stance":"Seconds adoption","positionSummary":"Seconds Munshi's motion for adoption of the Rules of Procedure."},
+    {"id":"sahaya","name":"Syamanandan Sahaya","shortName":"Sahaya","role":"Member","stance":"Scheduling query","positionSummary":"Asks when the Assembly's next sitting will be held."},
+    {"id":"several","name":"Several Members","shortName":"Members","role":"Assembly voices","stance":"Collective assent","positionSummary":"Collectively assent to the proposal that the House adjourn until 20 January 1947."},
+    {"id":"expunged","name":"Expunged Proceedings","shortName":"Expunged","role":"Record notation · speakers not preserved","stance":"Not attributable","positionSummary":"The official-style transcript records that speeches occurred during the Finance and Staff Committee issue but were ordered expunged; the archive does not invent speakers or content for them."}
+  ],
+  "interventions": [
+    {"id":"p-1-11-1","speakerId":"ayyangar","paragraphRef":"1.11.1–1.11.4","kind":"Validation proposal","summary":"Ayyangar attempts to move a resolution validating proceedings already taken before the new Rules formally come into force, arguing that earlier elections and appointments should be beyond procedural doubt.","tags":["Rules","Validation","Procedure"]},
+    {"id":"p-1-11-2","speakerId":"chair","paragraphRef":"1.11.2, 1.11.5","kind":"Order of business","summary":"The Chair says the Committee stage is complete, directs the House first to consider Munshi's motion for adoption of the Rules and postpones Ayyangar's validation proposal until afterward.","tags":["Rules","Plenary","Chair"]},
+    {"id":"p-1-11-6","speakerId":"munshi","paragraphRef":"1.11.6","kind":"Formal adoption motion","summary":"Munshi moves that the Rules accepted by the Committee of the House be adopted by the Assembly in plenary session.","tags":["Rules","Adoption","Plenary"]},
+    {"id":"p-1-11-7","speakerId":"subbarayan","paragraphRef":"1.11.7","kind":"Seconding","summary":"P. Subbarayan seconds Munshi's motion to adopt the Rules.","tags":["Rules","Seconding"]},
+    {"id":"p-1-11-8","speakerId":"chair","paragraphRef":"1.11.8","kind":"Rules adopted","summary":"The Chair puts the Rules to the House, and the Rules as accepted by the Committee are adopted.","excerpt":"The Rules, as accepted by the Committee of the House, were adopted.","tags":["Rules","Adoption","Institution-building"]},
+    {"id":"p-1-11-9","speakerId":"ayyangar","paragraphRef":"1.11.9","kind":"Renewed validation proposal","summary":"After adoption, Ayyangar renews his proposal that all proceedings already taken by the Assembly be deemed valid, proper and binding despite any inconsistency with the newly adopted Rules.","tags":["Validation","Rules","Past proceedings"]},
+    {"id":"p-1-11-10","speakerId":"munshi","paragraphRef":"1.11.10","kind":"Validation rebuttal","summary":"Munshi argues that prior acts were valid majority decisions made before the Rules came into force and therefore require no retrospective validation.","tags":["Validation","Majority","Rules"]},
+    {"id":"p-1-11-11","speakerId":"chair","paragraphRef":"1.11.11","kind":"Chair ruling","summary":"The Chair agrees that the proposed validating motion is unnecessary.","tags":["Chair","Validation","Ruling"]},
+    {"id":"p-1-11-12","speakerId":"chair","paragraphRef":"1.11.12–1.11.13","kind":"Committee nomination schedule","summary":"With the Rules now adopted, the Chair extends the nomination deadline for required committees to 2 PM and fixes a 4 PM sitting for elections and remaining business.","tags":["Committees","Nominations","Schedule"]},
+    {"id":"p-1-11-14","speakerId":"sahaya","paragraphRef":"1.11.14–1.11.15","kind":"Next sitting query","summary":"Syamanandan Sahaya asks when the Assembly will next meet; the Chair says the date will be announced later.","tags":["Schedule","Next sitting"]},
+    {"id":"p-1-11-16","speakerId":"chair","paragraphRef":"1.11.16","kind":"Afternoon reopening","summary":"At 4 PM the Chair reopens the plenary sitting and checks whether any member remains to sign the Register before committee elections begin.","tags":["Register","Afternoon sitting","Committees"]},
+    {"id":"p-1-11-17","speakerId":"chair","paragraphRef":"1.11.17–1.11.18","kind":"Credentials Committee elected","summary":"The Chair reads five valid nominations for the Credentials Committee—Sarat Chandra Bose, P. K. Sen, Tek Chand, Alladi Krishnaswami Ayyar and F. R. Anthony—and declares all five elected without a contest.","tags":["Credentials Committee","Election","Unopposed"]},
+    {"id":"p-1-11-19","speakerId":"chair","paragraphRef":"1.11.19–1.11.20","kind":"House Committee elected","summary":"The Chair reads one nomination from each of eleven provinces for the House Committee and declares all eleven elected because there is no contest.","tags":["House Committee","Provinces","Election"]},
+    {"id":"p-1-11-21","speakerId":"chair","paragraphRef":"1.11.21–1.11.22","kind":"Finance and Staff Committee nominations","summary":"For nine Finance and Staff Committee seats, the Chair reads ten nominations, creating the possibility of the sitting's only contested committee election.","tags":["Finance and Staff Committee","Nominations","Election"]},
+    {"id":"p-1-11-22-expunged","speakerId":"expunged","paragraphRef":"Record between 1.11.22 and 1.11.23","kind":"Expunged record","summary":"The transcript records that speeches were made and ordered expunged with the consent of the House. The archive preserves the existence of this gap but does not reconstruct speakers or arguments that the record does not provide.","tags":["Expunged","Source gap","Editorial restraint"]},
+    {"id":"p-1-11-23","speakerId":"chair","paragraphRef":"1.11.23","kind":"Finance and Staff Committee elected","summary":"After the Maharajadhiraja of Burdwan withdraws his candidature, nominations equal the nine available seats and the Chair declares the remaining nine members elected.","tags":["Finance and Staff Committee","Withdrawal","Election"]},
+    {"id":"p-1-11-24","speakerId":"chair","paragraphRef":"1.11.24","kind":"Federal Court reference dropped","summary":"The Chair notes that no member has moved to refer disputes over interpretation of the Cabinet Mission Statement of 16 May to the Federal Court and takes the House's position to be that no reference is necessary.","tags":["Federal Court","Cabinet Mission","Interpretation"]},
+    {"id":"p-1-11-25","speakerId":"chair","paragraphRef":"1.11.25","kind":"Session closure proposal","summary":"The Chair says the December session's business is complete and, because the new Rules limit the President's own adjournment power beyond three days, asks the Assembly itself to adjourn until 20 January 1947.","tags":["Adjournment","Rules","Session closure"]},
+    {"id":"p-1-11-26","speakerId":"several","paragraphRef":"1.11.26","kind":"Collective assent","summary":"Several members assent to adjournment until 20 January 1947.","tags":["Adjournment","Collective assent"]},
+    {"id":"p-1-11-27","speakerId":"chair","paragraphRef":"1.11.27","kind":"Volume I closes","summary":"The Chair formally adjourns the House until 11 AM on 20 January 1947, ending the Assembly's first December session and Volume I sequence.","excerpt":"The House will now adjourn till 11 a.m. on the 20th January, 1947.","tags":["Adjournment","20 January 1947","Volume I"]}
+  ],
+  "themes": ["Rules of Procedure","Institution-building","Credentials Committee","House Committee","Finance and Staff Committee","Federal Court","Cabinet Mission","Adjournment","Assembly procedure"],
+  "editorialStatus": "granular-speaker-timeline-live",
+  "credits": {"website":"Radhakishan Jat"}
+}
