@@ -2,14 +2,29 @@
   "session": {
     "date": "1946-12-13",
     "title": "The Objectives Resolution",
-    "venue": "Constituent Assembly Hall, New Delhi",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "11:00",
     "volume": "Vol. I",
+    "chair": "Dr. Rajendra Prasad",
     "primarySpeaker": "Jawaharlal Nehru",
-    "source": {
-      "publisher": "Parliament of India / Sansad",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762969?view_type=browse",
       "archiveUrl": "https://sansad.in/ls/debates/historical",
-      "policy": "Primary-source text is kept distinct from editorial summaries and visual annotations."
+      "fileName": "cad_13-12-1946.pdf"
     }
+  },
+  "sections": [
+    {
+      "order": 1,
+      "title": "Resolution re: Aims and Objects",
+      "keySpeakers": ["Jawaharlal Nehru", "Purushottam Das Tandon"],
+      "themes": ["Popular sovereignty", "Republic", "Union", "Justice", "Equality", "Freedoms", "Minority safeguards", "World peace"]
+    }
+  ],
+  "editorialPolicy": {
+    "canonicalSource": "Parliamentary record",
+    "rule": "Primary-source text is kept distinct from editorial summaries and visual annotations."
   },
   "credits": {
     "website": "Radhakishan Jat",
