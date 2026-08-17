@@ -6,7 +6,7 @@ const dataDir=path.join(root,'data');
 const output=path.join(dataDir,'search-manifest.json');
 const preferred=['search-index.json','search-speakers-granular.json','search-committees.json'];
 const discovered=fs.readdirSync(dataDir)
-  .filter(name=>/^search-(?:session|speakers)-.+\.json$/.test(name))
+  .filter(name=>/^search-(?:session|speakers|theme)-.+\.json$/.test(name))
   .sort((a,b)=>a.localeCompare(b));
 const sources=[...preferred,...discovered]
   .filter((name,index,list)=>list.indexOf(name)===index)
