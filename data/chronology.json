@@ -15,7 +15,7 @@
     {"date":"1946-12-16","status":"ready","route":"sessions/1946-12-16.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762971?view_type=browse"},
     {"date":"1946-12-17","status":"ready","route":"sessions/1946-12-17.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762964?view_type=browse"},
     {"date":"1946-12-18","status":"ready","route":"sessions/1946-12-18.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762966?view_type=browse"},
-    {"date":"1946-12-19","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762970?view_type=browse"},
+    {"date":"1946-12-19","status":"ready","route":"sessions/1946-12-19.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762970?view_type=browse"},
     {"date":"1946-12-21","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762965?view_type=browse"},
     {"date":"1946-12-23","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762979?view_type=browse"},
     {"date":"1947-01-20","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762950?view_type=browse"},
