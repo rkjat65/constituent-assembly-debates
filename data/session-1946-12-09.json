@@ -1,0 +1,64 @@
+{
+  "session": {
+    "date": "1946-12-09",
+    "title": "The First Sitting",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "11:00",
+    "volume": "Vol. I",
+    "chair": "Dr. Sachchidananda Sinha",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762978?view_type=browse",
+      "archiveUrl": "https://sansad.in/ls/debates/historical",
+      "fileName": "cad_09-12-1946.pdf"
+    }
+  },
+  "sections": [
+    {
+      "order": 1,
+      "title": "Election of Temporary Chairman",
+      "speakers": ["J. B. Kripalani", "Dr. Sachchidananda Sinha"],
+      "visualLabel": "Opening"
+    },
+    {
+      "order": 2,
+      "title": "Messages of Goodwill",
+      "speakers": ["Dr. Sachchidananda Sinha"],
+      "visualLabel": "Goodwill"
+    },
+    {
+      "order": 3,
+      "title": "Election Petition from Khan Abdus Samad Khan of British Baluchistan",
+      "visualLabel": "Petition"
+    },
+    {
+      "order": 4,
+      "title": "Chairman's Inaugural Address",
+      "speakers": ["Dr. Sachchidananda Sinha"],
+      "visualLabel": "Address"
+    },
+    {
+      "order": 5,
+      "title": "Nomination of Deputy Chairman",
+      "visualLabel": "Procedure"
+    },
+    {
+      "order": 6,
+      "title": "Death of Mr. Prasanna Deb Raikut",
+      "visualLabel": "Condolence"
+    },
+    {
+      "order": 7,
+      "title": "Presentation of Credentials and Signing of the Register",
+      "visualLabel": "Close"
+    }
+  ],
+  "editorialPolicy": {
+    "canonicalSource": "Parliamentary record",
+    "rule": "Verbatim excerpts, editorial summaries and inferred thematic links must be visually distinguishable. Do not invent timestamps, audio, quotations or speaker interventions."
+  },
+  "credits": {
+    "website": "Radhakishan Jat",
+    "presentation": "Visual-first archival interface"
+  }
+}
