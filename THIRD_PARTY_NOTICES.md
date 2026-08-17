@@ -53,6 +53,17 @@ Historical reference consulted:
 
 The archive illustration is not an official portrait and is not a facsimile of the source photograph.
 
+## Dr. B. R. Ambedkar — visual reference
+
+`assets/ambedkar-engraved.svg` is a custom vector editorial illustration created for this archive. It uses historical portrait references to preserve recognisable facial characteristics while redrawing the figure in the archive's parchment/engraved system.
+
+Historical reference consulted:
+- Wikimedia Commons: `Dr. B. R. Ambedkar at Delhi in 1948.jpg`
+- Source URL: `https://commons.wikimedia.org/wiki/File:Dr._B._R._Ambedkar_at_Delhi_in_1948.jpg`
+- Rights status recorded on Commons: CC0 / Public Domain in India
+
+The archive illustration is newly drawn and should not be treated as an official portrait or photographic facsimile.
+
 ## Constitution Hall editorial panorama
 
 `assets/assembly-hall-panorama.svg` is a newly drawn editorial reconstruction intended to establish the spatial character of a Constituent Assembly sitting. It is explicitly labelled as an editorial illustration.
