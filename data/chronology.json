@@ -20,7 +20,7 @@
     {"date":"1946-12-23","status":"ready","route":"sessions/1946-12-23.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762979?view_type=browse"},
     {"date":"1947-01-20","status":"ready","route":"sessions/1947-01-20.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762950?view_type=browse"},
     {"date":"1947-01-21","status":"ready","route":"sessions/1947-01-21.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762980?view_type=browse"},
-    {"date":"1947-01-22","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762967?view_type=browse"},
+    {"date":"1947-01-22","status":"ready","route":"sessions/1947-01-22.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762967?view_type=browse"},
     {"date":"1947-01-24","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762963?view_type=browse"},
     {"date":"1947-01-25","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762961?view_type=browse"},
     {"date":"1947-04-28","status":"queued"},
