@@ -19,7 +19,8 @@
     {"order":4,"title":"Adjournment until 13 December"}
   ],
   "themes": ["Deliberation","Notice and preparation","Objectives Resolution","Assembly procedure"],
-  "visualAssets": ["assets/rajendra-prasad-engraved.svg","assets/objectives-resolution-visual.svg"],
+  "visualAssets": [],
+  "visualStatus": "generated-art-pending",
   "editorialStatus": "visual-reading-live",
   "credits": {"website":"Radhakishan Jat"}
 }
