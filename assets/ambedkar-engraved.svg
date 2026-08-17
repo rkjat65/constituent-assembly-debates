@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+<title id="title">Custom engraved portrait of Dr. B. R. Ambedkar</title><desc id="desc">Editorial archival illustration with spectacles, suit, parchment grain and restrained Ashoka-blue, saffron and green accents.</desc>
+<defs>
+<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9ef"/><stop offset=".58" stop-color="#f0dfc3"/><stop offset="1" stop-color="#dfc49a"/></linearGradient>
+<linearGradient id="suit" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#5f6875"/><stop offset="1" stop-color="#27303a"/></linearGradient>
+<linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf7"/><stop offset="1" stop-color="#d7d7d0"/></linearGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="17"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .11 0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+<filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+<pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><path d="M0 0V12" stroke="#2b3540" stroke-width="2" opacity=".17"/></pattern>
+</defs>
+<rect width="1200" height="1500" fill="url(#paper)"/><circle cx="230" cy="245" r="205" fill="none" stroke="#1f4d8f" stroke-width="10" opacity=".1"/><g transform="translate(230 245)" stroke="#1f4d8f" fill="none" opacity=".1"><circle r="155" stroke-width="5"/><circle r="22" stroke-width="4"/><path d="M0-155V-22M0 155V22M-155 0H-22M155 0H22M-110-110L-16-16M110 110L16 16M110-110L16-16M-110 110L-16 16M-60-143L-8-20M60 143L8 20M60-143L8-20M-60 143L-8 20M-143-60L-20-8M143 60L20 8M143-60L20-8M-143 60L-20 8" stroke-width="3"/></g>
+
+<!-- tricolour field -->
+<path d="M95 1165C250 1090 430 1100 590 1170S900 1270 1110 1160" fill="none" stroke="#e87500" stroke-width="54" stroke-linecap="round" opacity=".55" filter="url(#rough)"/><path d="M95 1240C250 1170 430 1180 590 1250S900 1340 1110 1235" fill="none" stroke="#164d30" stroke-width="54" stroke-linecap="round" opacity=".53" filter="url(#rough)"/>
+
+<!-- torso -->
+<path d="M245 1445C290 1210 355 1080 470 1015C520 986 560 973 605 972C652 973 695 986 744 1015C858 1081 916 1212 958 1445Z" fill="url(#suit)" stroke="#1e2831" stroke-width="11"/>
+<path d="M463 1016L605 1215L744 1015C701 986 652 973 605 972C559 973 511 986 463 1016Z" fill="url(#shirt)" stroke="#39424b" stroke-width="7"/>
+<path d="M605 1050L551 1150L605 1320L661 1150Z" fill="#243f65" stroke="#1d2e48" stroke-width="7"/>
+<path d="M448 1035L535 1125L505 1445H310C333 1260 370 1120 448 1035ZM762 1035L675 1125L704 1445H900C876 1260 838 1120 762 1035Z" fill="url(#hatch)"/>
+
+<!-- neck -->
+<path d="M500 850C502 948 534 1004 605 1012C679 1004 710 947 710 850Z" fill="#c59b74" stroke="#513924" stroke-width="9"/>
+
+<!-- ears -->
+<path d="M388 570C344 568 326 615 338 679C349 734 377 761 407 730L425 602C420 581 407 570 388 570Z" fill="#c49a73" stroke="#4f3723" stroke-width="9"/><path d="M822 570C866 568 884 615 872 679C861 734 833 761 803 730L785 602C790 581 803 570 822 570Z" fill="#c49a73" stroke="#4f3723" stroke-width="9"/>
+
+<!-- face -->
+<path d="M414 417C453 320 520 268 607 265C697 267 762 323 795 420L784 673C777 806 700 903 605 914C510 903 433 806 425 673Z" fill="#c9a079" stroke="#4a3421" stroke-width="11"/>
+
+<!-- hair -->
+<path d="M409 455C416 337 493 245 607 238C712 240 782 314 807 423C762 397 727 382 688 373C635 361 586 361 534 373C489 383 450 406 409 455Z" fill="#2d2a28" stroke="#231f1d" stroke-width="10"/>
+<path d="M458 339C512 307 565 296 617 297C668 298 715 312 754 342" fill="none" stroke="#79644e" stroke-width="5" opacity=".55"/>
+
+<!-- brows -->
+<path d="M462 522C505 497 548 497 577 514M635 514C668 497 711 498 752 522" fill="none" stroke="#33291f" stroke-width="14" stroke-linecap="round"/>
+
+<!-- spectacles -->
+<g fill="rgba(255,255,255,.18)" stroke="#2c3136" stroke-width="9"><rect x="447" y="536" width="145" height="100" rx="39"/><rect x="618" y="536" width="145" height="100" rx="39"/><path d="M592 575C600 566 610 566 618 575" fill="none"/></g>
+<path d="M446 565L410 552M764 565L800 552" stroke="#2c3136" stroke-width="8"/>
+
+<!-- eyes -->
+<path d="M473 584C506 565 548 566 574 586C546 604 504 606 473 584ZM638 586C665 566 707 565 739 584C709 606 666 604 638 586Z" fill="#f7eee2" stroke="#4b3422" stroke-width="6"/><ellipse cx="526" cy="585" rx="13" ry="16" fill="#2c231d"/><ellipse cx="686" cy="585" rx="13" ry="16" fill="#2c231d"/><circle cx="531" cy="580" r="4" fill="#fff"/><circle cx="691" cy="580" r="4" fill="#fff"/>
+
+<!-- nose -->
+<path d="M603 572C586 631 581 681 590 708C601 720 620 721 634 709" fill="none" stroke="#684b32" stroke-width="9" stroke-linecap="round"/>
+<path d="M570 715C592 727 619 730 642 715" fill="none" stroke="#6b4c32" stroke-width="7"/>
+
+<!-- mouth -->
+<path d="M528 771C576 792 635 793 685 770" fill="none" stroke="#5c402b" stroke-width="9"/><path d="M548 804C584 818 626 819 664 804" fill="none" stroke="#8b6849" stroke-width="5" opacity=".62"/>
+
+<!-- face engraving -->
+<g stroke="#62452f" stroke-width="4" opacity=".34" fill="none"><path d="M438 465C474 430 516 409 559 402M772 465C737 430 695 409 652 402"/><path d="M449 656C490 672 531 675 566 668M761 656C720 672 681 675 645 668"/><path d="M458 699C497 710 530 713 558 708M752 699C714 710 683 713 653 708"/><path d="M475 842C520 874 561 884 605 886C649 884 691 874 736 842"/></g>
+
+<!-- archival frame -->
+<rect x="35" y="35" width="1130" height="1430" rx="24" fill="none" stroke="#b98a2f" stroke-width="4" opacity=".62"/><path d="M60 96H365M835 96H1140" stroke="#1f4d8f" stroke-width="7" opacity=".48"/><path d="M60 1400H430M770 1400H1140" stroke="#e87500" stroke-width="6" opacity=".6"/><path d="M60 1418H430M770 1418H1140" stroke="#164d30" stroke-width="6" opacity=".6"/><circle cx="600" cy="1409" r="23" fill="#fff9ef" stroke="#1f4d8f" stroke-width="5"/><path d="M600 1388V1430M579 1409H621M585 1394L615 1424M615 1394L585 1424" stroke="#1f4d8f" stroke-width="2.5"/>
+<rect width="1200" height="1500" fill="transparent" filter="url(#grain)"/>
+</svg>
