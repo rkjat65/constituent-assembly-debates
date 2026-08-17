@@ -1,0 +1,28 @@
+{
+  "session": {
+    "date": "1946-12-10",
+    "title": "The Assembly Makes Its Rules",
+    "venue": "Constitution Hall, New Delhi",
+    "startTime": "11:00",
+    "volume": "Vol. I",
+    "chair": "Dr. Sachchidananda Sinha",
+    "primarySource": {
+      "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
+      "recordUrl": "https://eparlib.sansad.in/handle/123456789/762976?view_type=browse",
+      "fileName": "cad_10-12-1946.pdf"
+    }
+  },
+  "sections": [
+    {"order":1,"title":"Procedure for Election of Permanent Chairman","keySpeakers":["J. B. Kripalani","Jawaharlal Nehru","H. V. Kamath"]},
+    {"order":2,"title":"Provisional Adoption of Central Legislative Assembly Rules and Standing Orders","keySpeakers":["Jawaharlal Nehru","Asaf Ali"]},
+    {"order":3,"title":"Confirmation of Existing Organisation of Constituent Assembly Office"},
+    {"order":4,"title":"Committee on Rules of Procedure","keySpeakers":["J. B. Kripalani","Syama Prasad Mookerjee","Purushottam Das Tandon","R. V. Dhulekar"]},
+    {"order":5,"title":"Announcement Regarding Nominations for Chairman and Committee"}
+  ],
+  "themes": ["Assembly procedure","Election of President","Rules of Procedure","Language in the Assembly","Institution-building"],
+  "editorialPolicy": {
+    "canonicalSource": "Parliamentary record",
+    "rule": "Use short attributed excerpts and visual summaries; never invent timing or audio metadata."
+  },
+  "credits": {"website":"Radhakishan Jat"}
+}
