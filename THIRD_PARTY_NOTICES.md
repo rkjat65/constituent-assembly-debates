@@ -15,7 +15,7 @@ This website is an independent project and is not affiliated with, endorsed by, 
 
 ## Dr. Sachchidananda Sinha — source image
 
-The custom asset `assets/sachchidananda-sinha-illustrated.svg` is a stylised derivative illustration produced for this project from a historical portrait used as visual reference.
+The custom asset `assets/sachchidananda-sinha-illustrated.webp` is a stylised derivative illustration produced for this project from a historical portrait used as visual reference.
 
 Source reference:
 - Wikimedia Commons: `Portrait of Dr. Sachchidananda Sinha.jpg`
@@ -27,7 +27,7 @@ The project illustration is intentionally transformed into the archive's parchme
 
 ## J. B. Kripalani — source image
 
-The custom asset `assets/jb-kripalani-illustrated.svg` is a stylised derivative illustration produced for this project from a historical sketch used as visual reference.
+The custom asset `assets/jb-kripalani-illustrated.webp` is a stylised derivative illustration produced for this project from a historical sketch used as visual reference.
 
 Source reference:
 - Wikimedia Commons: `17) J.B KRIPALANI AUTOGRAPHED SKETCH.jpg`
