@@ -3,6 +3,7 @@
   if(!match)return;
   const currentDate=match[1];
   const prefix='../';
+  if(!document.querySelector('link[data-session-nav-css]')){const css=document.createElement('link');css.rel='stylesheet';css.href=`${prefix}session-nav.css`;css.dataset.sessionNavCss='true';document.head.appendChild(css)}
   try{
     const response=await fetch(`${prefix}data/chronology.json`,{cache:'no-store'});
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
