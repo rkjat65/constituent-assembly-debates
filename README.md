@@ -10,15 +10,39 @@ GitHub Pages deploys automatically from `main`:
 
 `https://rkjat65.github.io/constituent-assembly-debates/`
 
-## Current routes
+## Current public routes
 
-- `/` — **Archive Home**
+### Core explorers
+- `/` — Archive Home
 - `/chronology.html` — chronological explorer
 - `/speakers.html` — personality explorer
 - `/themes.html` — thematic explorer
+- `/documents.html` — Parliament Digital Library source index
+- `/provisions.html` — constitutional-provision cross-reference layer
+- `/search.html` — client-side search across the prepared archive index
+
+### Sitting-level visual readings
 - `/sessions/1946-12-09.html` — **9 December 1946: The First Sitting**
 - `/sessions/1946-12-10.html` — **10 December 1946: The Assembly Makes Its Rules**
 - `/sessions/1946-12-13.html` — **13 December 1946: The Objectives Resolution**
+
+### Personality profiles
+- `/speakers/sachchidananda-sinha.html`
+- `/speakers/jb-kripalani.html`
+- `/speakers/jawaharlal-nehru.html`
+
+### Theme readings
+- `/topics/rules-procedure.html`
+- `/topics/objectives-resolution.html`
+
+## Source-indexed but not yet sitting-level visual readings
+
+The archive now stores verified structured source data for:
+
+- `data/session-1946-12-11.json` — election of Dr. Rajendra Prasad as permanent Chairman
+- `data/session-1946-12-12.json` — Objectives Resolution discussion postponed
+
+These dates are visible in chronology as **source indexed**, but a full sitting page is intentionally withheld until the required custom personality artwork is ready. This prevents visual quality from being solved with generic portraits or placeholders.
 
 ## Portrait assets currently committed
 
@@ -27,8 +51,6 @@ The site uses repository-hosted WebP illustrations, not runtime or external imag
 - `assets/sachchidananda-sinha-illustrated.webp`
 - `assets/jb-kripalani-illustrated.webp`
 - `assets/nehru-illustrated.webp`
-
-This keeps the visual readings portable on GitHub Pages and prevents broken external-image dependencies.
 
 ## Locked visual direction
 
@@ -43,6 +65,8 @@ The approved light-theme debate reader is the master design reference for this p
 - structured visual transcript instead of long uninterrupted transcript text;
 - a dark theme may exist, but it must inherit the same information architecture rather than become a separate redesign.
 
+See [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md).
+
 ## Source policy
 
 The **Parliament Digital Library / Lok Sabha Secretariat** is the canonical source for debate records used by this project. The interface links back to the official record rather than mirroring complete PDFs or full transcripts.
@@ -56,30 +80,29 @@ The project explicitly separates:
 
 We do not invent timestamps, quotations or archival audio. See [SOURCES.md](SOURCES.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Data layer
-
-Structured session and chronology data live under `/data` so the archive can later move from static prototypes to a generated application without rewriting the content model.
-
-Current seeds:
-
-- `data/session-1946-12-09.json`
-- `data/session-1946-12-10.json`
-- `data/session-1946-12-13.json`
-- `data/chronology.json`
-
 ## Product architecture
 
-Top-level modes:
+Top-level modes now implemented in the prototype:
 
 - **Home** — entry point and available visual readings.
-- **Chronology** — every sitting from the beginning to the end in official date order.
+- **Chronology** — sitting order with visual-ready and source-indexed states.
 - **Sessions** — visual reading of an individual sitting.
 - **Themes** — ideas connected across dates and speakers.
 - **Speakers** — interventions and themes grouped by personality.
-- **Constitutional provisions** — debates connected to the eventual constitutional text.
-- **Documents / Sources** — primary records, provenance and editorial notes.
-- **Search / Library** — later product layer for research and saved material.
+- **Constitutional provisions** — debates connected to later constitutional text with editorial caveats.
+- **Documents / Sources** — primary records and provenance.
+- **Search** — prepared-index search by date, person, theme, provision and source.
+
+## Deployment integrity
+
+Every GitHub Pages deployment runs `scripts/check-site.mjs` before publishing. The check validates:
+
+- local HTML/CSS/JS/image references;
+- required public routes;
+- required WebP personality assets;
+- structured JSON syntax;
+- absence of retired SVG portrait references.
 
 ## Development principle
 
-Accuracy comes before filling the interface. A date or sitting may appear in the chronology before its detailed page is authored; it should become clickable only when its source, content structure and portrait assets have been verified.
+Accuracy comes before filling the interface. A date may be source-indexed before its full visual page is authored. Sitting-level pages become public only when source structure and required portrait assets meet the archive standard.
