@@ -1,31 +1,6 @@
 {
-  "source": {
-    "publisher": "Parliament Digital Library, Lok Sabha Secretariat",
-    "collectionUrl": "https://eparlib.sansad.in/handle/123456789/760448",
-    "englishChronologyUrl": "https://eparlib.sansad.in/handle/123456789/760448/browse?order=ASC&rpp=20&type=language&value=English",
-    "englishRecordCount": 168,
-    "scope": "First 20 English records in official ascending-date order"
-  },
-  "records": [
-    {"date":"1946-12-09","status":"ready","route":"sessions/1946-12-09.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762978?view_type=browse"},
-    {"date":"1946-12-10","status":"ready","route":"sessions/1946-12-10.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762976?view_type=browse"},
-    {"date":"1946-12-11","status":"ready","route":"sessions/1946-12-11.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762975?view_type=browse"},
-    {"date":"1946-12-12","status":"ready","route":"sessions/1946-12-12.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762974?view_type=browse"},
-    {"date":"1946-12-13","status":"ready","route":"sessions/1946-12-13.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762969?view_type=browse"},
-    {"date":"1946-12-16","status":"ready","route":"sessions/1946-12-16.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762971?view_type=browse"},
-    {"date":"1946-12-17","status":"ready","route":"sessions/1946-12-17.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762964?view_type=browse"},
-    {"date":"1946-12-18","status":"ready","route":"sessions/1946-12-18.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762966?view_type=browse"},
-    {"date":"1946-12-19","status":"ready","route":"sessions/1946-12-19.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762970?view_type=browse"},
-    {"date":"1946-12-21","status":"ready","route":"sessions/1946-12-21.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762965?view_type=search"},
-    {"date":"1946-12-23","status":"ready","route":"sessions/1946-12-23.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762979?view_type=browse"},
-    {"date":"1947-01-20","status":"ready","route":"sessions/1947-01-20.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762950?view_type=browse"},
-    {"date":"1947-01-21","status":"ready","route":"sessions/1947-01-21.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762980?view_type=browse"},
-    {"date":"1947-01-22","status":"ready","route":"sessions/1947-01-22.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762967?view_type=browse"},
-    {"date":"1947-01-24","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762963?view_type=browse"},
-    {"date":"1947-01-25","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762961?view_type=browse"},
-    {"date":"1947-04-28","status":"queued"},
-    {"date":"1947-04-29","status":"queued"},
-    {"date":"1947-04-30","status":"queued"},
-    {"date":"1947-05-01","status":"queued"}
+  "source":{"publisher":"Parliament Digital Library, Lok Sabha Secretariat","collectionUrl":"https://eparlib.sansad.in/handle/123456789/760448","englishChronologyUrl":"https://eparlib.sansad.in/handle/123456789/760448/browse?order=ASC&rpp=20&type=language&value=English","englishRecordCount":168,"scope":"First 20 English records in official ascending-date order"},
+  "records":[
+    {"date":"1946-12-09","status":"ready","route":"sessions/1946-12-09.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762978?view_type=browse"},{"date":"1946-12-10","status":"ready","route":"sessions/1946-12-10.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762976?view_type=browse"},{"date":"1946-12-11","status":"ready","route":"sessions/1946-12-11.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762975?view_type=browse"},{"date":"1946-12-12","status":"ready","route":"sessions/1946-12-12.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762974?view_type=browse"},{"date":"1946-12-13","status":"ready","route":"sessions/1946-12-13.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762969?view_type=browse"},{"date":"1946-12-16","status":"ready","route":"sessions/1946-12-16.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762971?view_type=browse"},{"date":"1946-12-17","status":"ready","route":"sessions/1946-12-17.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762964?view_type=browse"},{"date":"1946-12-18","status":"ready","route":"sessions/1946-12-18.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762966?view_type=browse"},{"date":"1946-12-19","status":"ready","route":"sessions/1946-12-19.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762970?view_type=browse"},{"date":"1946-12-21","status":"ready","route":"sessions/1946-12-21.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762965?view_type=search"},{"date":"1946-12-23","status":"ready","route":"sessions/1946-12-23.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762979?view_type=browse"},{"date":"1947-01-20","status":"ready","route":"sessions/1947-01-20.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762950?view_type=browse"},{"date":"1947-01-21","status":"ready","route":"sessions/1947-01-21.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762980?view_type=browse"},{"date":"1947-01-22","status":"ready","route":"sessions/1947-01-22.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762967?view_type=browse"},{"date":"1947-01-24","status":"ready","route":"sessions/1947-01-24.html","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762963?view_type=browse"},{"date":"1947-01-25","status":"source-indexed","sourceUrl":"https://eparlib.sansad.in/handle/123456789/762961?view_type=browse"},{"date":"1947-04-28","status":"queued"},{"date":"1947-04-29","status":"queued"},{"date":"1947-04-30","status":"queued"},{"date":"1947-05-01","status":"queued"}
   ]
 }
