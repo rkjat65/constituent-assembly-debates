@@ -1,7 +1,7 @@
 {
   "session": {
     "date": "1946-12-12",
-    "title": "Objectives Resolution Discussion Postponed",
+    "title": "Before the Objectives Resolution",
     "venue": "Constitution Hall, New Delhi",
     "startTime": "11:00",
     "volume": "Vol. I",
@@ -19,6 +19,7 @@
     {"order":4,"title":"Adjournment until 13 December"}
   ],
   "themes": ["Deliberation","Notice and preparation","Objectives Resolution","Assembly procedure"],
-  "editorialStatus": "source-indexed",
+  "visualAssets": ["assets/rajendra-prasad-engraved.svg","assets/objectives-resolution-visual.svg"],
+  "editorialStatus": "visual-reading-live",
   "credits": {"website":"Radhakishan Jat"}
 }
