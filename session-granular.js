@@ -50,21 +50,26 @@ function normalizeReaderLabels(){
   const copy=head.querySelector('p');
   const legend=head.querySelector('.granular-legend');
   if(title)title.textContent='The debate, in speaking order';
-  if(copy)copy.textContent='Follow the interventions as a conversation between members. Editorial summaries explain each turn; the official Parliament transcript is placed immediately after this reader.';
-  if(legend)legend.innerHTML='<span>Guided cards = editorial navigation</span><span>Official transcript = primary record</span>';
+  if(copy)copy.textContent='Follow the interventions as a conversation between members. The official Parliament text stays open beside the guided reader on larger screens.';
+  if(legend)legend.innerHTML='<span>Left = guided conversation</span><span>Right = official record</span>';
 }
 
-function makeOfficialReader(data,afterNode){
+function makeOfficialReader(data,conversationNode){
   const source=data.session?.primarySource||{};
   const pdfUrl=derivePdfUrl(data.session);
-  if(!afterNode||!source.recordUrl)return;
+  if(!conversationNode||!source.recordUrl)return;
   const section=document.createElement('section');
   section.className='official-reader card';
   section.id='officialTranscript';
-  section.innerHTML=`<div class="official-reader-head"><div><span class="reader-kicker">PRIMARY RECORD</span><h3>Read the official debate text</h3><p>This is the Parliament Digital Library record. The conversation cards above are a navigation and comprehension layer, not a substitute for the transcript.</p></div><div class="official-reader-actions"><a class="ghost-btn button-link" href="${esc(source.recordUrl)}" target="_blank" rel="noreferrer">Open record ↗</a>${pdfUrl?`<a class="primary-link" href="${esc(pdfUrl)}" target="_blank" rel="noreferrer">Open PDF ↗</a>`:''}</div></div>${pdfUrl?`<div class="official-frame-wrap"><iframe class="official-frame" src="${esc(pdfUrl)}#view=FitH" title="Official Parliament Digital Library debate transcript"></iframe><div class="official-frame-fallback"><strong>If your browser blocks the embedded PDF, use “Open PDF”.</strong><span>The authoritative source remains Parliament Digital Library / Lok Sabha Secretariat.</span></div></div>`:`<div class="official-reader-empty">The official record is linked above. An embeddable PDF URL is not available for this sitting yet.</div>`}`;
-  afterNode.insertAdjacentElement('afterend',section);
+  section.innerHTML=`<div class="official-reader-head"><div><span class="reader-kicker">PRIMARY RECORD</span><h3>Official debate text</h3><p>Parliament Digital Library / Lok Sabha Secretariat. This is the source; the speaker cards are only a reading aid.</p></div><div class="official-reader-actions"><a class="ghost-btn button-link" href="${esc(source.recordUrl)}" target="_blank" rel="noreferrer">Record ↗</a>${pdfUrl?`<a class="primary-link" href="${esc(pdfUrl)}" target="_blank" rel="noreferrer">PDF ↗</a>`:''}</div></div>${pdfUrl?`<div class="official-frame-wrap"><iframe class="official-frame" src="${esc(pdfUrl)}#view=FitH" title="Official Parliament Digital Library debate transcript"></iframe><div class="official-frame-fallback"><strong>If the embedded PDF is blocked, open the PDF directly.</strong><span>The authoritative source remains Parliament Digital Library.</span></div></div>`:`<div class="official-reader-empty">The official record is linked above. An embeddable PDF URL is not available for this sitting yet.</div>`}`;
+  const parent=conversationNode.parentNode;
+  const split=document.createElement('div');
+  split.className='debate-reader-split';
+  parent.insertBefore(split,conversationNode);
+  split.appendChild(conversationNode);
+  split.appendChild(section);
   const actions=document.querySelector('.page-header .header-actions');
-  if(actions&&!actions.querySelector('a[href="#officialTranscript"]')){const link=document.createElement('a');link.className='ghost-btn button-link';link.href='#officialTranscript';link.innerHTML='▧&nbsp; Official transcript';actions.insertBefore(link,actions.firstChild)}
+  if(actions&&!actions.querySelector('a[href="#officialTranscript"]')){const link=document.createElement('a');link.className='ghost-btn button-link';link.href='#officialTranscript';link.innerHTML='▧&nbsp; Official text';actions.insertBefore(link,actions.firstChild)}
 }
 
 async function bootGranular(){
