@@ -4,9 +4,9 @@ const pathParts=window.location.pathname.split('/').filter(Boolean);
 const nested=pathParts.some(p=>p==='sessions'||p==='speakers'||p==='topics');
 const rootPrefix=nested?'../':'';
 
-function ensureStylesheet(href,key){if(document.querySelector(`link[data-${key}]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.dataset[key]='true';document.head.appendChild(link)}
-ensureStylesheet(`${rootPrefix}ux.css`,'archiveUx');
-if(document.querySelector('[data-granular-session],.transcript-card'))ensureStylesheet(`${rootPrefix}debate-reader.css`,'debateReader');
+function ensureStylesheet(href,key){if(document.querySelector(`link[data-style-key="${key}"]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.dataset.styleKey=key;document.head.appendChild(link)}
+ensureStylesheet(`${rootPrefix}ux.css`,'archive-ux');
+if(document.querySelector('[data-granular-session],.transcript-card'))ensureStylesheet(`${rootPrefix}debate-reader.css`,'debate-reader');
 
 const themeToggle=document.getElementById('themeToggle');
 const storedTheme=localStorage.getItem('cad-theme');
@@ -18,7 +18,13 @@ if(themeToggle){themeToggle.addEventListener('click',()=>{document.body.classLis
 document.querySelectorAll('.main-nav').forEach(nav=>{if(![...nav.querySelectorAll('.nav-item')].some(a=>a.textContent.trim().endsWith('Committees'))){const anchor=[...nav.querySelectorAll('.nav-item')].find(a=>a.textContent.trim().endsWith('Documents'));const link=document.createElement('a');link.href=`${rootPrefix}committees.html`;link.className='nav-item';link.innerHTML='<span>◫</span>Committees';if(anchor)nav.insertBefore(link,anchor);else nav.appendChild(link)}});
 
 const navRoutes={Home:`${rootPrefix}index.html`,Sessions:`${rootPrefix}chronology.html`,Speakers:`${rootPrefix}speakers.html`,Topics:`${rootPrefix}themes.html`,Chronology:`${rootPrefix}chronology.html`,Committees:`${rootPrefix}committees.html`,Documents:`${rootPrefix}documents.html`,Provisions:`${rootPrefix}provisions.html`,'Visual Atlas':`${rootPrefix}visual-atlas.html`,Search:`${rootPrefix}search.html`};
-document.querySelectorAll('.main-nav .nav-item').forEach(link=>{const label=link.textContent.trim();Object.entries(navRoutes).forEach(([name,url])=>{if(label.endsWith(name))link.setAttribute('href',url)})});
+document.querySelectorAll('.main-nav').forEach(nav=>{
+  [...nav.querySelectorAll('.nav-item')].forEach(link=>{const label=link.textContent.trim();Object.entries(navRoutes).forEach(([name,url])=>{if(label.endsWith(name))link.setAttribute('href',url)})});
+  [...nav.querySelectorAll('.nav-item')].forEach(link=>{const label=link.textContent.trim();if(label.endsWith('Chronology')||label.includes('My Library'))link.remove()});
+  const order=['Home','Sessions','Speakers','Topics','Committees','Provisions','Documents','Search','Visual Atlas'];
+  order.forEach(name=>{const item=[...nav.querySelectorAll('.nav-item')].find(a=>a.textContent.trim().endsWith(name));if(item)nav.appendChild(item)});
+  [...nav.querySelectorAll('.nav-item')].forEach(link=>{const label=link.textContent.trim();if(label.endsWith('Sessions'))link.innerHTML='<span>▦</span>Read Debates';if(label.endsWith('Documents'))link.innerHTML='<span>▧</span>Sources';if(label.endsWith('Visual Atlas'))link.classList.add('nav-supporting')});
+});
 
 const activeNav=document.querySelector('.main-nav .nav-item.active');
 if(activeNav&&window.matchMedia('(max-width:820px)').matches){requestAnimationFrame(()=>activeNav.scrollIntoView({block:'nearest',inline:'center'}))}
@@ -60,7 +66,5 @@ function upgradeLegacySessionReader(){
 upgradeLegacySessionReader();
 
 document.addEventListener('keydown',e=>{const tag=document.activeElement?.tagName;if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(tag)&&!document.getElementById('archiveSearch')){e.preventDefault();window.location.href=`${rootPrefix}search.html`}});
-
-document.querySelectorAll('.main-nav .nav-item').forEach(link=>{if(link.textContent.includes('My Library')&&link.getAttribute('href')==='#'){link.addEventListener('click',e=>{e.preventDefault();link.title='Library will be added after the core public archive is indexed'})}});
 
 if(pathParts.includes('sessions')&&!document.querySelector('script[data-session-nav]')){const sessionNav=document.createElement('script');sessionNav.src=`${rootPrefix}session-nav.js`;sessionNav.defer=true;sessionNav.dataset.sessionNav='true';document.body.appendChild(sessionNav)}
