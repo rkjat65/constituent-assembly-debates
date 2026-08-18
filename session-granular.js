@@ -10,7 +10,6 @@ async function loadPortraitRegistry(prefix){
     if(!response.ok)throw new Error(`portrait manifest HTTP ${response.status}`);
     const manifest=await response.json();
     portraitRegistry=new Map(Object.entries(manifest.portraits||{}));
-    // Exact transcript-name aliases that intentionally share a canonical generated portrait.
     if(portraitRegistry.has('Dr. Sarvepalli Radhakrishnan'))portraitRegistry.set('S. Radhakrishnan',portraitRegistry.get('Dr. Sarvepalli Radhakrishnan'));
     if(portraitRegistry.has('Dr. Rajendra Prasad'))portraitRegistry.set('Rajendra Prasad',portraitRegistry.get('Dr. Rajendra Prasad'));
     if(portraitRegistry.has('Dr. B. R. Ambedkar'))portraitRegistry.set('B. R. Ambedkar',portraitRegistry.get('Dr. B. R. Ambedkar'));
@@ -18,8 +17,9 @@ async function loadPortraitRegistry(prefix){
   }catch(error){console.warn('Portrait manifest unavailable; using initials.',error);portraitRegistry=new Map()}
 }
 
-function media(person,prefix){
-  const portrait=portraitRegistry.get(person?.name);
+function media(person,prefix,thumb=false){
+  let portrait=portraitRegistry.get(person?.name);
+  if(portrait&&thumb)portrait=portrait.replace('/portraits/','/portraits/thumbs/');
   if(portrait)return `<img data-generated-portrait data-fallback="${esc(initials(person?.name))}" src="${prefix}${esc(portrait)}" alt="Generated editorial portrait of ${esc(person.name)}" loading="lazy" decoding="async">`;
   return `<span class="speaker-initial" aria-hidden="true">${esc(initials(person?.name))}</span>`;
 }
@@ -27,6 +27,27 @@ function wirePortraitFallbacks(scope){
   scope?.querySelectorAll('img[data-generated-portrait]').forEach(img=>{
     img.addEventListener('error',()=>{const fallback=document.createElement('span');fallback.className='speaker-initial';fallback.setAttribute('aria-hidden','true');fallback.textContent=img.dataset.fallback||'•';img.replaceWith(fallback)},{once:true});
   });
+}
+
+function derivePdfUrl(session){
+  const explicit=session?.primarySource?.pdfUrl;
+  if(explicit)return explicit;
+  const record=session?.primarySource?.recordUrl||'';
+  const file=session?.primarySource?.fileName||'';
+  const match=record.match(/handle\/123456789\/(\d+)/);
+  if(match&&file)return `https://eparlib.sansad.in/bitstream/123456789/${match[1]}/1/${encodeURIComponent(file)}`;
+  return '';
+}
+
+function makeOfficialReader(data,afterNode){
+  const source=data.session?.primarySource||{};
+  const pdfUrl=derivePdfUrl(data.session);
+  if(!afterNode||!source.recordUrl)return;
+  const section=document.createElement('section');
+  section.className='official-reader card';
+  section.id='officialTranscript';
+  section.innerHTML=`<div class="official-reader-head"><div><span class="reader-kicker">PRIMARY RECORD</span><h3>Read the official debate text</h3><p>This panel is the Parliament Digital Library record itself. The conversation cards above are only a guided navigation layer.</p></div><div class="official-reader-actions"><a class="ghost-btn button-link" href="${esc(source.recordUrl)}" target="_blank" rel="noreferrer">Open record ↗</a>${pdfUrl?`<a class="primary-link" href="${esc(pdfUrl)}" target="_blank" rel="noreferrer">Open PDF ↗</a>`:''}</div></div>${pdfUrl?`<div class="official-frame-wrap"><iframe class="official-frame" src="${esc(pdfUrl)}#view=FitH" title="Official Parliament Digital Library debate transcript"></iframe><div class="official-frame-fallback"><strong>If the PDF is blocked by the browser, use “Open PDF”.</strong><span>The source remains Parliament Digital Library / Lok Sabha Secretariat.</span></div></div>`:`<div class="official-reader-empty">The official record is linked above. An embeddable PDF URL is not available for this sitting yet.</div>`}`;
+  afterNode.insertAdjacentElement('afterend',section);
 }
 
 async function bootGranular(){
@@ -47,8 +68,8 @@ async function bootGranular(){
 
     const visibleCountFor=id=>id==='all'?interventions.length:interventions.filter(item=>item.speakerId===id).length;
     if(filters){
-      const all=`<button class="speaker-filter active" type="button" data-speaker="all" aria-pressed="true"><span class="speaker-initial">ALL</span><b>All speakers</b><small>${interventions.length}</small></button>`;
-      filters.innerHTML=all+(data.speakers||[]).map(person=>`<button class="speaker-filter" type="button" data-speaker="${esc(person.id)}" aria-pressed="false">${media(person,prefix)}<b>${esc(person.shortName||person.name)}</b><small>${visibleCountFor(person.id)}</small></button>`).join('');
+      const all=`<button class="speaker-filter active" type="button" data-speaker="all" aria-pressed="true"><span class="speaker-initial">ALL</span><b>Whole debate</b><small>${interventions.length}</small></button>`;
+      filters.innerHTML=all+(data.speakers||[]).map(person=>`<button class="speaker-filter" type="button" data-speaker="${esc(person.id)}" aria-pressed="false">${media(person,prefix,true)}<b>${esc(person.shortName||person.name)}</b><small>${visibleCountFor(person.id)}</small></button>`).join('');
       wirePortraitFallbacks(filters);
       filters.querySelectorAll('.speaker-filter').forEach(btn=>btn.addEventListener('click',()=>{
         filters.querySelectorAll('.speaker-filter').forEach(b=>{const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
@@ -63,23 +84,26 @@ async function bootGranular(){
       stream.innerHTML=interventions.map((item,index)=>{
         const person=people.get(item.speakerId)||{name:item.speaker||'Assembly'};
         const tags=(item.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('');
-        const quote=item.excerpt?`<div class="actual-words">${esc(item.excerpt)}</div>`:'';
+        const quote=item.excerpt?`<blockquote class="actual-words"><span>Exact words</span>${esc(item.excerpt)}</blockquote>`:'';
         const source=item.sourceUrl||data.session?.primarySource?.recordUrl;
-        return `<article class="intervention" id="${esc(item.id)}" data-speaker="${esc(item.speakerId)}" tabindex="-1"><div class="intervention-seq">${String(index+1).padStart(2,'0')}</div><div class="intervention-speaker">${media(person,prefix)}<div><strong>${esc(person.name)}</strong><small>${esc(person.role||'Member')}</small></div></div><div class="intervention-body"><div class="intervention-topline"><span class="paragraph-ref">${esc(item.paragraphRef||'Session record')}</span><span class="intervention-kind">${esc(item.kind||'Intervention')}</span></div><p>${esc(item.summary)}</p>${quote}<div class="intervention-tags">${tags}</div>${source?`<a class="source-mini" href="${esc(source)}" target="_blank" rel="noreferrer">Verify in primary record ↗</a>`:''}</div></article>`;
+        const role=person.role||'Member';
+        return `<article class="intervention debate-turn" id="${esc(item.id)}" data-speaker="${esc(item.speakerId)}" tabindex="-1"><div class="turn-rail"><span class="turn-number">${String(index+1).padStart(2,'0')}</span>${media(person,prefix,true)}</div><div class="turn-card"><header class="turn-speaker"><div><strong>${esc(person.name)}</strong><small>${esc(role)}</small></div><div class="turn-meta"><span class="paragraph-ref">${esc(item.paragraphRef||'Session record')}</span><span class="intervention-kind">${esc(item.kind||'Intervention')}</span></div></header><div class="turn-copy"><p>${esc(item.summary)}</p>${quote}</div><footer class="turn-footer"><div class="intervention-tags">${tags}</div>${source?`<a class="source-mini" href="${esc(source)}" target="_blank" rel="noreferrer">Read exact record ↗</a>`:''}</footer></div></article>`;
       }).join('');
       wirePortraitFallbacks(stream);
     }
 
     if(matrix){
-      matrix.innerHTML=(data.speakers||[]).map(person=>{const href=person.profile?`${prefix}${person.profile}`:`${prefix}search.html?q=${encodeURIComponent(person.name)}`;return `<a class="card speaker-matrix-card" href="${esc(href)}">${media(person,prefix)}<div><h4>${esc(person.name)}</h4><p>${esc(person.positionSummary||person.role||'')}</p><span class="stance">${esc(person.stance||'Session participant')}</span></div></a>`}).join('');
+      matrix.innerHTML=(data.speakers||[]).map(person=>{const href=person.profile?`${prefix}${person.profile}`:`${prefix}search.html?q=${encodeURIComponent(person.name)}`;return `<a class="card speaker-matrix-card" href="${esc(href)}">${media(person,prefix,true)}<div><h4>${esc(person.name)}</h4><p>${esc(person.positionSummary||person.role||'')}</p><span class="stance">${esc(person.stance||'Session participant')}</span></div></a>`}).join('');
       wirePortraitFallbacks(matrix);
     }
 
-    // Deep links should land on the exact intervention after the asynchronous timeline has rendered.
+    const granularCard=granularRoot.closest('.granular-card')||granularRoot;
+    if(!document.getElementById('officialTranscript'))makeOfficialReader(data,granularCard);
+
     if(location.hash){const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target){requestAnimationFrame(()=>{target.classList.add('deep-linked');target.scrollIntoView({block:'center'});target.focus({preventScroll:true});setTimeout(()=>target.classList.remove('deep-linked'),1800)})}}
   }catch(error){
     console.error('Granular session failed to load',error);
-    if(granularRoot)granularRoot.innerHTML='<article class="card section-card"><h3>Detailed timeline unavailable</h3><p>The primary source link remains available above.</p></article>';
+    if(granularRoot)granularRoot.innerHTML='<article class="card section-card"><h3>Detailed reading unavailable</h3><p>The primary source link remains available above.</p></article>';
   }
 }
 bootGranular();
