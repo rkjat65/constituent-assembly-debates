@@ -39,6 +39,17 @@ function derivePdfUrl(session){
   return '';
 }
 
+function normalizeReaderLabels(){
+  const head=granularRoot?.querySelector('.granular-head')||granularRoot?.closest('.granular-card')?.querySelector('.granular-head');
+  if(!head)return;
+  const title=head.querySelector('h3');
+  const copy=head.querySelector('p');
+  const legend=head.querySelector('.granular-legend');
+  if(title)title.textContent='The debate, in speaking order';
+  if(copy)copy.textContent='Follow the interventions as a conversation between members. Editorial summaries explain each turn; the official Parliament transcript is placed immediately after this reader.';
+  if(legend)legend.innerHTML='<span>Guided cards = editorial navigation</span><span>Official transcript = primary record</span>';
+}
+
 function makeOfficialReader(data,afterNode){
   const source=data.session?.primarySource||{};
   const pdfUrl=derivePdfUrl(data.session);
@@ -46,7 +57,7 @@ function makeOfficialReader(data,afterNode){
   const section=document.createElement('section');
   section.className='official-reader card';
   section.id='officialTranscript';
-  section.innerHTML=`<div class="official-reader-head"><div><span class="reader-kicker">PRIMARY RECORD</span><h3>Read the official debate text</h3><p>This panel is the Parliament Digital Library record itself. The conversation cards above are only a guided navigation layer.</p></div><div class="official-reader-actions"><a class="ghost-btn button-link" href="${esc(source.recordUrl)}" target="_blank" rel="noreferrer">Open record ↗</a>${pdfUrl?`<a class="primary-link" href="${esc(pdfUrl)}" target="_blank" rel="noreferrer">Open PDF ↗</a>`:''}</div></div>${pdfUrl?`<div class="official-frame-wrap"><iframe class="official-frame" src="${esc(pdfUrl)}#view=FitH" title="Official Parliament Digital Library debate transcript"></iframe><div class="official-frame-fallback"><strong>If the PDF is blocked by the browser, use “Open PDF”.</strong><span>The source remains Parliament Digital Library / Lok Sabha Secretariat.</span></div></div>`:`<div class="official-reader-empty">The official record is linked above. An embeddable PDF URL is not available for this sitting yet.</div>`}`;
+  section.innerHTML=`<div class="official-reader-head"><div><span class="reader-kicker">PRIMARY RECORD</span><h3>Read the official debate text</h3><p>This is the Parliament Digital Library record. The conversation cards above are a navigation and comprehension layer, not a substitute for the transcript.</p></div><div class="official-reader-actions"><a class="ghost-btn button-link" href="${esc(source.recordUrl)}" target="_blank" rel="noreferrer">Open record ↗</a>${pdfUrl?`<a class="primary-link" href="${esc(pdfUrl)}" target="_blank" rel="noreferrer">Open PDF ↗</a>`:''}</div></div>${pdfUrl?`<div class="official-frame-wrap"><iframe class="official-frame" src="${esc(pdfUrl)}#view=FitH" title="Official Parliament Digital Library debate transcript"></iframe><div class="official-frame-fallback"><strong>If your browser blocks the embedded PDF, use “Open PDF”.</strong><span>The authoritative source remains Parliament Digital Library / Lok Sabha Secretariat.</span></div></div>`:`<div class="official-reader-empty">The official record is linked above. An embeddable PDF URL is not available for this sitting yet.</div>`}`;
   afterNode.insertAdjacentElement('afterend',section);
 }
 
@@ -58,6 +69,7 @@ async function bootGranular(){
     const [response]=await Promise.all([fetch(src,{cache:'no-store'}),loadPortraitRegistry(prefix)]);
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     const data=await response.json();
+    normalizeReaderLabels();
     const people=new Map((data.speakers||[]).map(p=>[p.id,p]));
     const interventions=data.interventions||[];
     const filters=document.getElementById('speakerFilters');
