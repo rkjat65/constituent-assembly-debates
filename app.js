@@ -4,7 +4,9 @@ const pathParts=window.location.pathname.split('/').filter(Boolean);
 const nested=pathParts.some(p=>p==='sessions'||p==='speakers'||p==='topics');
 const rootPrefix=nested?'../':'';
 
-if(!document.querySelector('link[data-archive-ux]')){const ux=document.createElement('link');ux.rel='stylesheet';ux.href=`${rootPrefix}ux.css`;ux.dataset.archiveUx='true';document.head.appendChild(ux)}
+function ensureStylesheet(href,key){if(document.querySelector(`link[data-${key}]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.dataset[key]='true';document.head.appendChild(link)}
+ensureStylesheet(`${rootPrefix}ux.css`,'archiveUx');
+if(document.querySelector('[data-granular-session],.transcript-card'))ensureStylesheet(`${rootPrefix}debate-reader.css`,'debateReader');
 
 const themeToggle=document.getElementById('themeToggle');
 const storedTheme=localStorage.getItem('cad-theme');
@@ -13,7 +15,6 @@ function refreshThemeIcon(){if(!themeToggle)return;const dark=document.body.clas
 refreshThemeIcon();
 if(themeToggle){themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('cad-theme',document.body.classList.contains('dark')?'dark':'light');refreshThemeIcon()})}
 
-// Committees became a first-class explorer once the archive reached the January 1947 institutional phase.
 document.querySelectorAll('.main-nav').forEach(nav=>{if(![...nav.querySelectorAll('.nav-item')].some(a=>a.textContent.trim().endsWith('Committees'))){const anchor=[...nav.querySelectorAll('.nav-item')].find(a=>a.textContent.trim().endsWith('Documents'));const link=document.createElement('a');link.href=`${rootPrefix}committees.html`;link.className='nav-item';link.innerHTML='<span>◫</span>Committees';if(anchor)nav.insertBefore(link,anchor);else nav.appendChild(link)}});
 
 const navRoutes={Home:`${rootPrefix}index.html`,Sessions:`${rootPrefix}chronology.html`,Speakers:`${rootPrefix}speakers.html`,Topics:`${rootPrefix}themes.html`,Chronology:`${rootPrefix}chronology.html`,Committees:`${rootPrefix}committees.html`,Documents:`${rootPrefix}documents.html`,Provisions:`${rootPrefix}provisions.html`,'Visual Atlas':`${rootPrefix}visual-atlas.html`,Search:`${rootPrefix}search.html`};
@@ -36,22 +37,30 @@ document.querySelectorAll('.bookmark-btn,.save-mini').forEach((btn,index)=>{cons
 document.querySelectorAll('.play-mini,.excerpt-btn').forEach(btn=>{btn.addEventListener('click',()=>{const row=btn.closest('.timeline-row');if(!row)return;document.querySelectorAll('.timeline-row').forEach(r=>r.classList.remove('active'));row.classList.add('active');row.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'nearest'})})});
 
 const profileRoutes={
-  'Dr. Sachchidananda Sinha':'sachchidananda-sinha.html',
-  'J. B. Kripalani':'jb-kripalani.html',
-  'Jawaharlal Nehru':'jawaharlal-nehru.html',
-  'Dr. Rajendra Prasad':'rajendra-prasad.html',
-  'Dr. B. R. Ambedkar':'br-ambedkar.html',
-  'S. Radhakrishnan':'sarvepalli-radhakrishnan.html',
-  'Dr. Sarvepalli Radhakrishnan':'sarvepalli-radhakrishnan.html',
-  'Syama Prasad Mookerjee':'syama-prasad-mookerjee.html',
-  'Syama Prasad Mukherjee':'syama-prasad-mookerjee.html',
-  'K. M. Munshi':'km-munshi.html'
+  'Dr. Sachchidananda Sinha':'sachchidananda-sinha.html','J. B. Kripalani':'jb-kripalani.html','Jawaharlal Nehru':'jawaharlal-nehru.html','Dr. Rajendra Prasad':'rajendra-prasad.html','Dr. B. R. Ambedkar':'br-ambedkar.html','S. Radhakrishnan':'sarvepalli-radhakrishnan.html','Dr. Sarvepalli Radhakrishnan':'sarvepalli-radhakrishnan.html','Syama Prasad Mookerjee':'syama-prasad-mookerjee.html','Syama Prasad Mukherjee':'syama-prasad-mookerjee.html','K. M. Munshi':'km-munshi.html'
 };
 document.querySelectorAll('.speaker-card').forEach(card=>{const name=card.querySelector('.speaker-copy h3')?.textContent.trim();const button=card.querySelector('.outline-btn');if(name&&button&&profileRoutes[name]&&button.tagName!=='A')button.addEventListener('click',()=>{window.location.href=`${rootPrefix}speakers/${profileRoutes[name]}`})});
+
+function parseSittingDate(){const text=document.querySelector('.session-meta-line span')?.textContent.trim()||'';const d=new Date(text);if(Number.isNaN(d.getTime()))return '';const yyyy=d.getFullYear();const mm=String(d.getMonth()+1).padStart(2,'0');const dd=String(d.getDate()).padStart(2,'0');return `${yyyy}-${mm}-${dd}`}
+function pdlPdfForLegacy(recordUrl,date){const handle=String(recordUrl||'').match(/handle\/123456789\/(\d+)/);const parts=String(date||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!handle||!parts)return '';return `https://eparlib.sansad.in/bitstream/123456789/${handle[1]}/1/cad_${parts[3]}-${parts[2]}-${parts[1]}.pdf`}
+function upgradeLegacySessionReader(){
+  const outline=document.querySelector('.transcript-card');
+  if(!outline||document.querySelector('[data-granular-session]'))return;
+  const heading=outline.querySelector('.transcript-head h3');
+  if(heading)heading.innerHTML='Guided sitting outline <small>Editorial navigation</small>';
+  const timecode=document.querySelector('.readalong-bar .timecode');if(timecode)timecode.textContent='Guided outline';
+  const record=[...document.querySelectorAll('a[href*="eparlib.sansad.in/handle/123456789/"]')].map(a=>a.href).find(Boolean);
+  const date=parseSittingDate();const pdf=pdlPdfForLegacy(record,date);
+  if(!record||document.getElementById('officialTranscript'))return;
+  const reader=document.createElement('section');reader.className='official-reader card legacy-official-reader';reader.id='officialTranscript';
+  reader.innerHTML=`<div class="official-reader-head"><div><span class="reader-kicker">PRIMARY RECORD</span><h3>Read the official debate text</h3><p>The outline above is editorial. This panel opens the Parliament Digital Library record itself.</p></div><div class="official-reader-actions"><a class="ghost-btn button-link" href="${record}" target="_blank" rel="noreferrer">Record ↗</a>${pdf?`<a class="primary-link" href="${pdf}" target="_blank" rel="noreferrer">PDF ↗</a>`:''}</div></div>${pdf?`<div class="official-frame-wrap"><iframe class="official-frame" src="${pdf}#view=FitH" title="Official Parliament Digital Library debate transcript"></iframe><div class="official-frame-fallback"><strong>If the embedded PDF is blocked, open the PDF directly.</strong><span>Parliament Digital Library / Lok Sabha Secretariat.</span></div></div>`:''}`;
+  const source=document.querySelector('.source-strip');if(source)source.parentNode.insertBefore(reader,source);else outline.insertAdjacentElement('afterend',reader);
+  const actions=document.querySelector('.page-header .header-actions');if(actions&&!actions.querySelector('a[href="#officialTranscript"]')){const link=document.createElement('a');link.className='ghost-btn button-link';link.href='#officialTranscript';link.innerHTML='▧&nbsp; Official text';actions.insertBefore(link,actions.firstChild)}
+}
+upgradeLegacySessionReader();
 
 document.addEventListener('keydown',e=>{const tag=document.activeElement?.tagName;if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(tag)&&!document.getElementById('archiveSearch')){e.preventDefault();window.location.href=`${rootPrefix}search.html`}});
 
 document.querySelectorAll('.main-nav .nav-item').forEach(link=>{if(link.textContent.includes('My Library')&&link.getAttribute('href')==='#'){link.addEventListener('click',e=>{e.preventDefault();link.title='Library will be added after the core public archive is indexed'})}});
 
-// Every sitting receives continuity navigation from chronology.json without editing individual HTML pages.
 if(pathParts.includes('sessions')&&!document.querySelector('script[data-session-nav]')){const sessionNav=document.createElement('script');sessionNav.src=`${rootPrefix}session-nav.js`;sessionNav.defer=true;sessionNav.dataset.sessionNav='true';document.body.appendChild(sessionNav)}
