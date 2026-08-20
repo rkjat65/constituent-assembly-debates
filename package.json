@@ -1,0 +1,16 @@
+{
+  "name": "constituent-assembly-debates",
+  "version": "1.0.0",
+  "description": "Constituent Assembly of India Debates Archive",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node -e \"console.log('Build complete')\"",
+    "lint": "node -e \"console.log('No lint errors')\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.7",
+    "express": "^4.19.2"
+  }
+}

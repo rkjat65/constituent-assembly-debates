@@ -1,0 +1,8 @@
+{
+  "name": "Constituent Assembly Debates Archive",
+  "description": "Read India's Constituent Assembly debates sitting by sitting, speaker by speaker, alongside the official parliamentary record.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

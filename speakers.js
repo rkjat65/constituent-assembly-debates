@@ -16,7 +16,19 @@ const profileRoutes={
   'Dr. Sarvepalli Radhakrishnan':'speakers/sarvepalli-radhakrishnan.html',
   'Syama Prasad Mookerjee':'speakers/syama-prasad-mookerjee.html',
   'Syama Prasad Mukherjee':'speakers/syama-prasad-mookerjee.html',
-  'K. M. Munshi':'speakers/km-munshi.html'
+  'K. M. Munshi':'speakers/km-munshi.html',
+  'Alladi Krishnaswami Ayyar':'speakers/alladi-krishnaswami-ayyar.html',
+  'Hansa Mehta':'speakers/hansa-mehta.html',
+  'Sardar Vallabhbhai Patel':'speakers/vallabhbhai-patel.html',
+  'Vallabhbhai Patel':'speakers/vallabhbhai-patel.html',
+  'Dakshayani Velayudhan':'speakers/dakshayani-velayudhan.html',
+  'Jaipal Singh':'speakers/jaipal-singh.html',
+  'Begum Aizaz Rasul':'speakers/begum-aizaz-rasul.html',
+  'Frank Anthony':'speakers/frank-anthony.html',
+  'Maulana Abul Kalam Azad':'speakers/maulana-abul-kalam-azad.html',
+  'Abul Kalam Azad':'speakers/maulana-abul-kalam-azad.html',
+  'G. Durgabai':'speakers/g-durgabai.html',
+  'Durgabai Deshmukh':'speakers/g-durgabai.html'
 };
 
 let cards=[];
